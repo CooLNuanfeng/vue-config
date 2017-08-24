@@ -1,0 +1,35 @@
+/* social share button */
+.fshare a{display:inline-block; *display:inline; zoom:1; margin-right:3px; text-indent:-9000px; overflow:hidden; vertical-align:middle;}
+.fs-16{line-height:16px;}
+.fs-24{line-height:24px;}
+.fs-32{line-height:32px;}
+.fs-146x39{line-height:39px;}
+.fs-16 a{width:16px; height:16px; background:url(images/share-16.png) no-repeat;}
+.fs-24 a{width:24px; height:24px; background:url(images/share-24.png) no-repeat;}
+.fs-32 a{width:32px; height:32px; background:url(images/share-32.png) no-repeat;}
+.fs-146x39 a{width:146px; height:39px; background:url(images/share-146x39.png) no-repeat;}
+
+.fs-16 .fs-qzone{background-position:0 0;}
+.fs-16 .fs-tsina{background-position:-16px 0;}
+.fs-16 .fs-tqq{background-position:-32px 0;}
+.fs-16 .fs-renren{background-position:-48px 0;}
+.fs-16 .fs-douban{background-position:-64px 0;}
+
+.fs-24 .fs-qzone{background-position:0 0;}
+.fs-24 .fs-tsina{background-position:0 -24px;}
+.fs-24 .fs-tqq{background-position:0 -48px;}
+.fs-24 .fs-renren{background-position:0 -72px;}
+.fs-24 .fs-douban{background-position:0 -96px;}
+
+.fs-32 .fs-qzone{background-position:0 0;}
+.fs-32 .fs-tsina{background-position:-32px 0;}
+.fs-32 .fs-tqq{background-position:-64px 0;}
+.fs-32 .fs-renren{background-position:-96px 0;}
+.fs-32 .fs-douban{background-position:-128px 0;}
+
+.fs-146x39 .fs-tsina{background-position:0 0;}
+.fs-146x39 .fs-qzone{background-position:-146px 0;}
+.fs-146x39 .fs-tqq{background-position:-292px 0;}
+.fs-146x39 .fs-tsina:hover{background-position:0 -39px;}
+.fs-146x39 .fs-qzone:hover{background-position:-146px -39px;}
+.fs-146x39 .fs-tqq:hover{background-position:-292px -39px;}

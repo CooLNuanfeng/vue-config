@@ -1,0 +1,23 @@
+.fmu-cld-main{display:none; position:absolute !important; top:0; overflow:hidden;}
+
+.fmu-cld-header{height:44px; line-height:44px; text-align:center; background-color:#099FDE; color:#fff;}
+.fmu-cld-header .fmu-header-icon{display:inline-block; width:44px; height:44px; float:left; text-align:center;}
+.fmu-cld-header .fmu-icon-back{width:8px; height:8px; margin:18px 18px 0; border-top:2px solid #fff; border-right:2px solid #fff; -webkit-transform: rotate(225deg); transform: rotate(225deg); float:left;}
+.fmu-cld-header .fmu-header-title{display:inline-block; margin-left:-44px; line-height:44px; font-size:18px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+
+.fmu-cld-body{background:#fff; text-align:center;}
+.fmu-cld-body ul{display:inline-block; width:100%;}
+.fmu-cld-body li{width:14.2%; float:left; list-style:outside none none;}
+.fmu-cld-body .fmu-cld-week-end{color:#ff902d;}
+.fmu-cld-body .fmu-cld-item-active{background:#06a2d0 none repeat scroll 0% 0%; color:#fff;}
+.fmu-cld-body .fmu-cld-item-disable{color:#cfcfcf;}
+.fmu-cld-hastip em{display:block; line-height:20px; font-size:12px;}
+.fmu-cld-hastip i{display:block; line-height:15px; font-size:12px; font-style:normal;}
+.fmu-cld-body .fmu-cld-week{height:24px; line-height:24px; font:400 12px/24px verdana; border-bottom:1px solid #c8c8c8; background:#f7f7f7 none repeat scroll 0% 0%; overflow:hidden;}
+
+.fmu-cld-body .fmu-cld-unit{padding-bottom:80px; overflow:auto;}
+.fmu-cld-body .fmu-cld-month{height:40px; text-align:center; font:400 16px/50px verdana; background:#fff none repeat scroll 0% 0%;}
+.fmu-cld-body .fmu-cld-daybox{background:#fff none repeat scroll 0% 0%; overflow:hidden;}
+.fmu-cld-body .fmu-cld-item{height:40px; padding:4px 0px; font:400 14px/45px verdana; overflow:hidden; text-align:center;}
+
+.fmu-cld-toast{display:none; position:fixed; bottom:45px; left:50%; z-index:9999; margin-left:-92px; border-radius:5px; padding:10px; width:165px; background:rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%; color:#fff; text-align:center;}

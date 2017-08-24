@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dialog tooltipbox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/dialog.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align:center; color: #000; }
+        .demo { margin: 20px 0; text-align: center; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/webapp/js/base.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/dialog.js"></script>
+    <script src="/common/libs/fmu/js/widget/dialog.tipbox.js"></script>
+
+</head>
+
+<body>
+    <div class="description">
+        <p>Dialog tipbox</p>
+    </div>
+
+    <section class="demo">
+        <button id="J_success" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">成功</button>
+        <button id="J_loading" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">正在加载</button>
+    </section>
+
+    <script>
+
+        var dia = new FMU.UI.Dialog()
+        dia.modal({
+            content: "支付成功",
+            autoClose: 2 * 1000
+        });
+        dia.setup();
+
+        $('#J_success').click(function () {
+            dia.load();
+        });
+
+        var dia1 = new FMU.UI.Dialog()
+        dia1.loading();
+        dia1.setup();
+
+        $('#J_loading').click(function () {
+            dia1.load();
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+(function(b,a){b.Toolbar.register("position",{position:function(c){this.$el.fix(c);return this}})})(gmu,gmu.$);

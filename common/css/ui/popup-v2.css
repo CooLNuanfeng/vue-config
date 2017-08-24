@@ -1,0 +1,37 @@
+/* popup */
+/*
+HTML structure:
+<div id="id" class="popover">
+	<div class="pop-header"><h3 class="pop-title">...Title...</h3><a href="javascript:void(0);" class="close">&times;</a></div>
+	<div class="pop-content">
+		...Content...
+	</div>
+</div>
+
+Require:
+//common/libs/tools/overlay.min.js
+//common/libs/tools/expose.min.js
+
+Domready JS Code:
+$("#id").overlay({
+	top: "30%",
+	mask: {
+		color: "#000",
+		opacity: 0.5
+	},
+	onBeforeLoad:function(){},
+	onLoad:function(){},
+	onClose:function(){}
+});
+
+$(".btn").click(function(){
+	$("#id").data("overlay").load();
+});
+
+*/
+
+.popover{width:600px; background:#FFF; border-color:#8dd299; border-style:solid; border-width:0 3px 3px; position:absolute; z-index:2002; text-align:left;}
+.popover .pop-header{height:35px; background:#8DD299;}
+.popover .pop-title{height:35px; font:normal 18px/35px 'Hiragino Sans GB','Microsoft YaHei','SimSun',sans-serif; color:#FFF; text-indent:12px;}
+.popover .pop-header .close{width:35px; height:35px; display:block; cursor:pointer; position:absolute; z-index:2003; top:0; right:-3px; background:#A4E1AE; font:30px/35px 'SimSun',sans-serif; text-align:center; color:#FFF;}
+.popover .pop-header .close:hover{background:#68BE77;}

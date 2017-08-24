@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>zepto.countdown2.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" href="http://www.fanli.com/favicon.ico" />
+
+    <script src="http://static2.51fanli.net/common/libs/gmu/zepto.min.js"></script>
+    <script src="zepto.countdown2-min.js"></script>
+    <style>
+        html { font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/ }
+        body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+        dl, dt, dd, ul, ol, li,
+        pre,
+        fieldset, lengend, button, input, textarea,
+        th, td { margin: 0; padding: 0; }
+        body, button, input, select, textarea { font: 1.4rem/1.6 Tahoma, Helvetica, Arial, "宋体", sans-serif; }
+        a { color: #666; text-decoration: none; }
+        a:active { outline: none; }
+        
+        .red { color:#f60; }
+        .demo_item { padding: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <section class="demo_item">
+        <h2>remain: 59 - 59秒 </h2>
+        <h4>{type: "minute"}</h4>
+        <div id="J_countdown1" data-remain="59" style="display: none;">
+            <span><span class="J_day"></span>天</span>
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+        </div>
+
+        <h4>{type: "all"}</h4>
+        <div id="J_countdown2" data-remain="59" style="display: none;">
+            <span><span class="J_day"></span>天</span>
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+            <span><span class="J_second"></span>秒</span>
+        </div>
+
+        <strong class="red">PASS</strong>
+    </section>
+
+    <section class="demo_item">
+        <h2>remain: 3660 - 1小时1分 </h2>
+        <h4>{type: "minute"}</h4>
+        <div id="J_countdown3" data-remain="3660" style="display: none;">
+            <span><span class="J_day"></span>天</span>
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+        </div>
+
+        <h4>{type: "all"}</h4>
+        <div id="J_countdown4" data-remain="3660" style="display: none;">
+            <span><span class="J_day"></span>天</span>
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+            <span><span class="J_second"></span>秒</span>
+        </div>
+
+        <strong class="red">PASS</strong>
+    </section>
+
+
+    <section class="demo_item">
+        <h2>remain: 90060 - 1天1小时1分 </h2>
+        <h4>{type: "minute"}</h4>
+        <div id="J_countdown5" data-remain="90060" style="display: none;">
+            <span><span class="J_day"></span>天</span>
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+        </div>
+
+        <h4>{type: "all"}</h4>
+        <div id="J_countdown6" data-remain="90060" style="display: none;">
+            <span><span class="J_day"></span>天</span>
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+            <span><span class="J_second"></span>秒</span>
+        </div>
+
+        <h4>{type: "all" , showType: "excludeday"}</h4>
+        <div id="J_countdown7" data-remain="90060" style="display: none;">
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+            <span><span class="J_second"></span>秒</span>
+        </div>
+
+        <h4>{type: "minute", showType: "excludeday"}</h4>
+        <div id="J_countdown8" data-remain="90060" style="display: none;">
+            <span><span class="J_hour"></span>时</span>
+            <span><span class="J_minute"></span>分</span>
+        </div>
+
+        <strong class="red">PASS</strong>
+    </section>
+
+
+    <script>
+
+        $("#J_countdown1").countdown({
+            type: "minute",
+            openFlex: true,
+            onExpiry: function () {
+                console.log("[59秒][type-minute]onExpiry triggered");
+            },
+            onDayExpiry: function () {
+                console.log("[59秒][type-minute]onDayExpiry triggered");
+            },
+            onHourExpiry: function () {
+                console.log("[59秒][type-minute]onHourExpiry triggered");
+            },
+            onMinuteExpiry: function () {
+                console.log("[59秒][type-minute]onMinuteExpiry triggered");
+            },
+            onSecondExpiry: function () {
+                console.log("[59秒][type-minute]onSecondExpiry triggered");
+            },
+        });
+
+        $("#J_countdown2").countdown({
+            type: "all",
+            onExpiry: function () {
+                console.log("[59秒][type-all]onExpiry triggered");
+            }
+        });
+
+        $("#J_countdown3").countdown({
+            type: "minute",
+            openFlex: true,
+            onExpiry: function () {
+                console.log("[1小时1分][type-minute]onExpiry triggered");
+            },
+            onDayExpiry: function () {
+                console.log('[1小时1分][type-minute]onDayExpiry triggered');
+                $("#J_countdown3 .J_day").parent().remove();
+            }
+        });
+
+        $("#J_countdown4").countdown({
+            type: "all",
+            onExpiry: function () {
+                console.log("[1小时1分][type-minute]onExpiry triggered");
+            }
+        });
+
+        $("#J_countdown5").countdown({
+            type: "minute",
+            onExpiry: function () {
+                console.log("[1天1小时1分][type-minute]onExpiry triggered");
+            }
+        });
+
+        $("#J_countdown6").countdown({
+            type: "all",
+            onExpiry: function () {
+                console.log("[1天1小时1分][type-all]onExpiry triggered");
+            }
+        });
+
+        $("#J_countdown7").countdown({
+            type: "all",
+            showType: "excludeday",
+            onExpiry: function () {
+                console.log("[1天1小时1分][type-all][showType-excludeday]onExpiry triggered");
+            }
+        });
+
+        $("#J_countdown8").countdown({
+            type: "minute",
+            showType: "excludeday",
+            onExpiry: function () {
+                console.log("[1天1小时1分][type-minute][showType-excludeday]onExpiry triggered");
+            }
+        });
+    </script>
+
+</body>
+</html>

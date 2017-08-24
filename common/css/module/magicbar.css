@@ -1,0 +1,60 @@
+/* magic bar */
+html,body{width: 100%;height: 100%;}
+.mbar {width: 41px;height: 100%;border-right: 1px solid #CECECE;position: fixed;left: 0;top: 0;background: #E8E8E8;}
+
+/*main*/
+.mbar-bd {border-right: 1px solid #fff;height: 100%;}
+
+.mbar-btn-switch {display: block;width: 48px;height: 44px;background: url(//static2.51fanli.net/common/images/magicbar/sprite-mbar-v3.alpha.png) no-repeat 0 0;position: absolute;left: 0;bottom: 30px;}
+
+.mbar-close {color: #666;display: block;width: 40px;height: 40px;line-height: 40px;font-size: 20px;text-align: center;font-weight: bold;position:absolute;left: 0;bottom: 30px;}
+.mbar-close:hover {color: #555;}
+
+
+/*tabs*/
+.mbar-tabs {width: 40px;position: absolute;left: 0;top: 20%;z-index: 10;}
+.mbar-tab {text-align: center;display: block;padding: 8px 4px;color: #555;position: relative; outline:none;}
+.mbar-tab:hover {background: #D1D1D1;color: #444;}
+.mbar-tab .bd {margin-top: 5px;display: block;line-height: 14px;}
+.mbar-tab .arrow {position: absolute;width: 13px;height: 25px;background: url(//static2.51fanli.net/common/images/magicbar/sprite-mbar-v3.alpha.png) no-repeat 0 -64px;left: 34px;top: 20px;}
+
+/*message box*/
+.mbar-msg-box {border: 1px solid #ddd;padding-top: 1px;position: absolute;left: 46px;top: 100px;background: #fff;-webkit-box-shadow: 0 1px 2px 0 #ccc;box-shadow: 0 1px 2px 0 #ccc;z-index: 1;}
+.mbar-mod {width: 288px;border-top: 3px solid #6CC988;}
+
+/*icon*/
+.mabar-icon {display: block;width: 25px;height: 25px;margin: 0 auto;background: url(//static2.51fanli.net/common/images/magicbar/sprite-mbar-v3.alpha.png) no-repeat;}
+.ico-account {background-position: -70px 0;}
+.ico-msg {background-position: -105px 0;}
+.ico-contact {background-position: -141px 0;}
+
+
+/*module - login*/
+.mbar-mod-login {width: 228px;}
+.llpopover { text-align: left; font-size: 12px;padding:0 30px; }
+    .llpopover a { color: #1BA358; }
+        .llpopover a:hover { text-decoration: underline; }
+.l_left { float: left; width: 84px; height: 36px; text-align: right; line-height: 36px; font-size:14px; }
+.ll_input { width: 220px; height: 26px; padding-left: 5px; border: solid 1px #ccc; font-size: 12px; line-height: 26px\9; zoom: 1; }
+
+    .llpopover .btn_disabled { display: inline-block; border: 1px solid #ccc; padding: 1px 12px; color: #ddd; outline: none; font-size: 16px; background-color: #aaa; font-weight: bold; outline: 0; line-height: 24px; }
+.llpopover .btn_green { display: block; color: #fff; outline: none; font-size: 16px; background-color: #1BA358; font-weight: bold; line-height: 36px; text-align: center;}
+.llpopover a.btn_green{cursor: pointer;}
+    .llpopover a.btn_green:hover, .llpopover a.btn_green:active, .llpopover a.btn_green:focus { background-color: #1CBE65;color:#fff; }
+    .llpopover .btn_disabled { display: inline-block; border: 1px solid #ccc; padding: 1px 12px; color: #ddd; outline: none; font-size: 16px; background-color: #aaa; font-weight: bold; outline: 0; line-height: 24px; }
+.llpopover .logining { display: none; }
+.llpopover .msg_row{display:none;margin: 0px 20px 10px;}
+.llpopover .top_tips {position:relative; padding:3px 5px 3px 32px; border: 1px solid #FC9; background: #FFC; line-height: 18px; color: #F30; zoom:1;}
+.llpopover .top_tips i { position:absolute; top: 4px;left: 7px; display: block; width: 17px; height: 17px; overflow: hidden; text-indent: -9999px; }
+.llpopover .top_tips i.error {border:0;padding:0;margin:0; background: url(/common/images/icon/ico-error-s.png) no-repeat; }
+.llpopover .top_tips i.notice {border:0;padding:0;margin:0; background: url(/common/images/icon/ico-notice-s.png) no-repeat; }
+
+.llpopover .ll_row {margin-bottom: 10px;}
+.llpopover .ll_label {font-weight: bold;color: #333;font-size: 14px;}
+.llpopover .no_account {float: right;margin-top: 10px;}
+.switch-logintype-mobile {float: right;}
+.l_login{padding-top:10px;}
+.lbl{margin-left: 5px; vertical-align: middle;}
+.verc_input { width: 48px; font-variant:small-caps; text-transform:uppercase; *vertical-align: 0;}
+.upc_container { display: inline-block; width: 70px; height: 30px; margin: 0 15px; }
+.upc_text { display: inline-block; width: 50px; vertical-align: -6px; *vertical-align: 2px; }

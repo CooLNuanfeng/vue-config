@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>raphael polyline</title>
+    <script src="raphael.js"></script>
+    <script src="../underscore/underscore-1.6.0.js"></script>
+
+</head>
+<body style="background: #f00;">
+
+    <div id="holder"></div>
+
+    <script>
+
+       
+        var paper = Raphael("holder", 1000, 800);
+        var circleX = 500;
+        var circleY = 550;
+        var circleR = 200;
+
+        // var path = paper.path(["M0,0L300, 600ZM100,10L600, 400Z"]).attr({ "stroke": "#f4f2bb", "stroke-width": 1 });
+
+
+
+        Raphael.fn.spotlight = function (options) {
+            var settings = _.extend({}, options);
+            var paper = this;
+            var circle = paper.circle(circleX, circleY, circleR);
+            circle.attr({ "fill": "#e30933", "stroke-width": 0 });
+
+            circle.glow({
+                width: 50,
+                fill: true,
+                color: "#f4f2bb",
+                offsetx: 0,
+                offsety: 0
+            });
+        };
+
+        //paper.spotlight();
+
+        var hue = Math.random();
+
+        //2、三角形使用Path命令L
+        paper.path("M0,30 L50, 30 L600,450 L400,700z").attr({ "fill": "#f4f2bb", "stroke-width": 0, "opacity": .3 }).toBack();
+
+        //paper.path("M1000,30, L950, 30 L400,450 L600,700z").attr({ "fill": "#f4f2bb", "opacity": .3, "stroke-width": 0 }).toBack();
+
+        Raphael.fn.ball = function (x, y, r, hue) {
+            hue = hue || 0;
+            return this.set(
+                this.ellipse(x, y + r - r / 5, r, r / 2).attr({ fill: "rhsb(" + hue + ", 1, .25)-hsb(" + hue + ", 1, .25)", stroke: "none", opacity: 0 }),
+                this.ellipse(x, y, r, r).attr({ fill: "r(.5,.9)hsb(" + hue + ", 1, .75)-hsb(" + hue + ", .5, .25)", stroke: "none" }),
+                this.ellipse(x, y, r - r / 5, r - r / 20).attr({ stroke: "none", fill: "r(.5,.1)#ccc-#ccc", opacity: 0 })
+            );
+        };
+        window.onload = function () {
+            var x = 550, y = 650, r = 150;
+            paper.ball(x, y, r, Math.random());
+        };
+
+        //paper.rect(800, 200, 40, 140).scale(5).rotate(50).attr({ fill: "90-#fff:5-#000:95" }).toBack(),
+        //paper.rect(100, 200, 140, 40).scale(5).rotate(50).attr({ fill: "90-#fff:5-#000:95" }).toBack(),
+
+        //        paper.path("M15.5,1.999c-1.042,0-1.916,0.377-2.57,1.088L2.895,13.138C2.302,13.784,1.999,14.58,1.999,15.5C1.999,22.943,8.057,29,15.5,29S29,22.943,29,15.5S22.943,1.999,15.5,1.999zM15.5,28C8.596,28,3,22.404,3,15.5c0-3.452,5.239-2.737,7.501-4.999C12.762,8.239,12.048,3,15.5,3C22.404,3,28,8.597,28,15.5S22.404,28,15.5,28z");
+
+        //        paper.path("M21.066,20.667c1.227-0.682,1.068-3.311-0.354-5.874c-0.611-1.104-1.359-1.998-2.109-2.623c-0.875,0.641-1.941,1.031-3.102,1.031c-1.164,0-2.231-0.391-3.104-1.031c-0.75,0.625-1.498,1.519-2.111,2.623c-1.422,2.563-1.578,5.192-0.35,5.874c0.549,0.312,1.127,0.078,1.723-0.496c-0.105,0.582-0.166,1.213-0.166,1.873c0,2.938,1.139,5.312,2.543,5.312c0.846,0,1.265-0.865,1.466-2.188c0.2,1.314,0.62,2.188,1.461,2.188c1.396,0,2.545-2.375,2.545-5.312c0-0.66-0.062-1.291-0.168-1.873C19.939,20.745,20.516,20.983,21.066,20.667zM15.5,12.201c2.361,0,4.277-1.916,4.277-4.279S17.861,3.644,15.5,3.644c-2.363,0-4.28,1.916-4.28,4.279S13.137,12.201,15.5,12.201zM24.094,14.914c1.938,0,3.512-1.573,3.512-3.513c0-1.939-1.573-3.513-3.512-3.513c-1.94,0-3.513,1.573-3.513,3.513C20.581,13.341,22.153,14.914,24.094,14.914zM28.374,17.043c-0.502-0.907-1.116-1.641-1.732-2.154c-0.718,0.526-1.594,0.846-2.546,0.846c-0.756,0-1.459-0.207-2.076-0.55c0.496,1.093,0.803,2.2,0.861,3.19c0.093,1.516-0.381,2.641-1.329,3.165c-0.204,0.117-0.426,0.183-0.653,0.224c-0.056,0.392-0.095,0.801-0.095,1.231c0,2.412,0.935,4.361,2.088,4.361c0.694,0,1.039-0.71,1.204-1.796c0.163,1.079,0.508,1.796,1.199,1.796c1.146,0,2.09-1.95,2.09-4.361c0-0.542-0.052-1.06-0.139-1.538c0.492,0.472,0.966,0.667,1.418,0.407C29.671,21.305,29.541,19.146,28.374,17.043zM6.906,14.914c1.939,0,3.512-1.573,3.512-3.513c0-1.939-1.573-3.513-3.512-3.513c-1.94,0-3.514,1.573-3.514,3.513C3.392,13.341,4.966,14.914,6.906,14.914zM9.441,21.536c-1.593-0.885-1.739-3.524-0.457-6.354c-0.619,0.346-1.322,0.553-2.078,0.553c-0.956,0-1.832-0.321-2.549-0.846c-0.616,0.513-1.229,1.247-1.733,2.154c-1.167,2.104-1.295,4.262-0.287,4.821c0.451,0.257,0.925,0.064,1.414-0.407c-0.086,0.479-0.136,0.996-0.136,1.538c0,2.412,0.935,4.361,2.088,4.361c0.694,0,1.039-0.71,1.204-1.796c0.165,1.079,0.509,1.796,1.201,1.796c1.146,0,2.089-1.95,2.089-4.361c0-0.432-0.04-0.841-0.097-1.233C9.874,21.721,9.651,21.656,9.441,21.536z");
+
+
+        //paper.rect(0, 0, 640, 480, 10).attr({ fill: "#F2F1D7", stroke: "none" }).toBack();
+        //paper.path("M300,200 h-150 a150,150 0 0,1 150,-150 z").attr({ "fill": "#a9ea00", "stroke": "#c9c" });
+        /*
+        window.onload = function () {
+            return;
+            var paper = Raphael(0, 0, 1000, 1000);//画布大小
+            var head = paper.ellipse(200, 200, 157, 150);//绘制头部，长半径157，短半径150的椭圆
+            head.attr({ fill: "r(0.75, 0.10)#fff-#0BB0DA" });//渐变填充
+            var face = paper.ellipse(200, 230, 133, 101);//绘制脸部，长半径133，短半径101的椭圆
+            face.attr({ fill: "#fff" });
+            var eye = paper.set();//绘制眼睛，长74，宽86，圆角37
+            eye.push(
+                paper.rect(126, 94, 74, 86, 37),
+                paper.rect(200, 94, 74, 86, 37)
+            );
+            eye.attr({ fill: "#fff" });
+            var eye_left = paper.circle(180, 160, 7);//绘制眼珠，半径为7的圆
+            var eye_right = paper.circle(220, 160, 7);
+            eye_left.attr({ fill: "#000" });
+            eye_right.attr({ fill: "#000" });
+            eye_left.hover(function () {//经过左眼动画
+                eye_left.animate({
+                    "20%": { cy: 120, easing: "<>" },
+                    "40%": { cy: 120, cx: 150, easing: "<>" },
+                    "60%": { cy: 160, cx: 150, easing: "<>" },
+                    "80%": { cx: 180, easing: "<>" },
+                }, 2000);
+            })
+            eye_right.hover(function () {//经过右眼动画
+                eye_right.animate({
+                    "20%": { cy: 120, easing: "<>" },
+                    "40%": { cy: 120, cx: 250, easing: "<>" },
+                    "60%": { cy: 160, cx: 250, easing: "<>" },
+                    "80%": { cx: 220, easing: "<>" },
+                }, 2000);
+            })
+            var nose = paper.circle(200, 180, 17);//绘制鼻子
+            nose.attr({ fill: "r(0.75,0.20)#fff-#C93E00" });
+            nose.hover(function () {//经过鼻子上下移动
+                nose.animate({ cy: 190 }, 500, "bounce");
+            }, function () {
+                nose.animate({ cy: 180 }, 500, "bounce");
+            })
+            nose.click(function () {//点击鼻子胡须变长
+                beard.animate({
+                    "50%": { scale: 1.3, easing: "<>" },
+                    "100%": { scale: 1, easing: "<>" },
+                }, 1000);
+            })
+            var nose_line = paper.path("M200,200L200,287");//绘制鼻子下面的直线
+            var beard = paper.set();//绘制6条胡须
+            beard.push(
+                paper.path("M160,200L100,180"),
+                paper.path("M160,210L100,210"),
+                paper.path("M160,220L100,240"),
+                paper.path("M240,200L300,180"),
+                paper.path("M240,210L300,210"),
+                paper.path("M240,220L300,240")
+            );
+            var mouse = paper.path("M100,250 Q200,327 300,250");//绘制嘴巴的曲线
+            var hand_left = paper.set();//绘制左手
+            hand_left.push(
+                paper.rect(58, 340, 50, 70).rotate(50).attr({ fill: "#0BB0DA" }),
+                paper.circle(40, 410, 33).attr({ fill: "#fff" })
+            );
+            var hand_right = paper.set();//绘制右手
+            hand_right.push(
+                paper.rect(292, 340, 50, 70).rotate(-50).attr({ fill: "#0BB0DA" }),
+                paper.circle(360, 410, 33).attr({ fill: "#fff" })
+            );
+            hand_left.hover(function () {//经过左手左手上抬
+                hand_left.animate({ rotation: 120, cy: 350 }, 500, "bounce")
+            }, function () {
+                hand_left.animate({ rotation: 50, cy: 410 }, 500, "bounce")
+            })
+            hand_right.hover(function () {//经过右手右手上抬
+                hand_right.animate({ rotation: -120, cy: 350 }, 500, "bounce")
+            }, function () {
+                hand_right.animate({ rotation: -50, cy: 410 }, 500, "bounce")
+            })
+            var body = paper.set();//绘制身体，用蓝色填充
+            body.push(
+                paper.rect(90, 338, 220, 158),
+                paper.rect(89, 338, 2, 62).attr({ "stroke": "#0BB0DA" }),//使用两块蓝色的长方形覆盖交叉的直线
+                paper.rect(309, 338, 2, 62).attr({ "stroke": "#0BB0DA" })
+            );
+            body.attr({ fill: "#0BB0DA" });
+            var body_in = paper.circle(200, 390, 85);//绘制白色肚子
+            body_in.attr({ fill: "#fff" });
+            var pocket = paper.set();
+            pocket.push(
+                paper.circle(200, 390, 66),//绘制口袋，先画一个圆
+                paper.rect(134, 296, 132, 96).attr({ fill: "#fff", "stroke": "#fff" }),//再用白色的长方形盖住半个圆
+                paper.path("M134,392L266,392")//最后画口袋的上边缘直线
+            );
+            pocket.mouseover(function () {//经过口袋双手摆动
+                hand_left.animate({
+                    "25%": { rotation: 120, cy: 350, easing: "<>" },
+                    "50%": { rotation: 50, cy: 410, easing: "<>" },
+                    "75%": { rotation: 120, cy: 350, easing: "<>" },
+                    "100%": { rotation: 50, cy: 410, easing: "<>" },
+                }, 1000);
+                hand_right.animate({
+                    "25%": { rotation: -120, cy: 350, easing: "<>" },
+                    "50%": { rotation: -50, cy: 410, easing: "<>" },
+                    "75%": { rotation: -120, cy: 350, easing: "<>" },
+                    "100%": { rotation: -50, cy: 410, easing: "<>" },
+                }, 1000);
+            })
+            var belt = paper.rect(82, 314, 236, 24, 8);//绘制红色的领带
+            belt.attr({ fill: "180-#fff-#AE2A00" });
+
+            var bell = paper.set();//绘制铃铛
+            bell.push(
+                paper.circle(200, 345, 22).attr({ fill: "r(0.85,0.20)#fff-#EDE51E" }),//黄色渐变填充大圆
+                paper.circle(200, 350, 5).attr({ fill: "#000" }),//黑色小圆
+                paper.path("M180,335L220,335"),//铃铛里的线条
+                paper.path("M180,340L220,340"),
+                paper.path("M200,355L200,367")
+            );
+            bell.hover(function () {//经过铃铛左右摆动
+                bell.animate({ translation: 5 }, 500, "bounce")
+            }, function () {
+                bell.animate({ translation: -5 }, 500, "bounce")
+            });
+            var foot = paper.set();//绘制两只脚
+            foot.push(
+                paper.circle(200, 495, 12),//首先绘制裆部的圆圈
+                paper.rect(197, 500, 6, 8).attr({ stroke: "#fff" }),//然后绘制白色的长方形挡住半圆
+                paper.rect(68, 496, 130, 34, 17),//接着绘制两只脚
+                paper.rect(202, 496, 130, 34, 17)
+            );
+            foot.attr({ fill: "#fff" });
+            foot.hover(function () {//经过脚左右摆动
+                foot.animate({ translation: 10 }, 500, "bounce")
+            }, function () {
+                foot.animate({ translation: -10 }, 500, "bounce")
+            })
+        }
+        */
+
+        //1、直线使用path命令L           
+        // paper.path("M20,20L100,20z").attr({ "fill": "#5DDEF4", "stroke": "#2A6570", "stroke-width": 2 });
+        //2、三角形使用Path命令L           
+        // paper.path("M130,30 L200,30 L160,90 z").attr({ "fill": "#5DDEF4", "stroke": "#2A6570", "stroke-width": 2 });
+        //3、T形使用Path命令H,V     
+        // paper.path("M 40,40 H 90 V 60 H 70 V 110 H 60 V 60 H 40 z").attr({ "fill": "#5DDEF4", "stroke": "#2A6570", "stroke-width": 2 });
+        //4、2次贝塞尔曲线形，使用path命令Q      
+        // paper.path("M240,40L300,40L300,100");
+        // paper.path("M240,40Q300,40 300,100").attr('stroke', 'red');
+        //5、2次贝塞尔曲线形，使用path命令Q和T（第一个是正常绘制，第二个光滑连接）         
+        // paper.path('M10,250 L90,130 L160,160 L250,190 L250,70');
+        // paper.path('M10,250 Q90,130 160,160 T250,70').attr('stroke', 'red');
+        //6、绘制3次贝赛尔曲线，使用命令C，平滑画线使用命令S          
+        // paper.path('M320,120 L350,180 L450,260 L480,140');
+        // paper.path('M320,120 C350,180 450,260 480,140').attr('stroke', 'red');
+        // paper.path('M320,120 S450,260 480,140').attr('stroke', 'yellow');
+
+
+
+
+
+        //绘制左上的椭圆            
+        paper.ellipse(130, 40, 60, 30);
+        paper.ellipse(70, 70, 60, 30);
+        paper.path('M70,40 A60,30 0 0,0 130,70').attr('stroke', 'yellow');
+        paper.text(40, 30, 'start(70,40)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(160, 80, 'end(130,70)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(70, 120, 'large-arc-flag=0/nsweep-flag=0').attr({ 'font-size': 11, 'fill': 'green', 'text-anchor': 'start' });
+        //绘制右上的椭圆         
+        paper.ellipse(330, 40, 60, 30);
+        paper.ellipse(270, 70, 60, 30);
+        paper.path('M270,40 A60,30 0 0,1 330,70').attr('stroke', 'yellow');
+        paper.text(240, 30, 'start(270,40)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(360, 80, 'end(330,70)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(270, 120, 'large-arc-flag=0/nsweep-flag=1').attr({ 'font-size': 11, 'fill': 'green', 'text-anchor': 'start' });
+        //绘制左下的椭圆           
+        paper.ellipse(130, 240, 60, 30);
+        paper.ellipse(70, 270, 60, 30);
+        paper.path('M70,240 A60,30 0 1,0 130,270').attr('stroke', 'yellow');
+        paper.text(40, 230, 'start(70,240)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(160, 280, 'end(130,270)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(70, 320, 'large-arc-flag=1/nsweep-flag=0').attr({ 'font-size': 11, 'fill': 'green', 'text-anchor': 'start' });
+        //绘制右下的椭圆           
+        paper.ellipse(330, 240, 60, 30);
+        paper.ellipse(270, 270, 60, 30);
+        paper.path('M270,240 A60,30 0 1,1 330,270').attr('stroke', 'yellow');
+        paper.text(240, 230, 'start(270,240)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(360, 280, 'end(330,270)').attr({ 'font-size': 11, 'fill': 'blue' });
+        paper.text(270, 320, 'large-arc-flag=1/nsweep-flag=1').attr({ 'font-size': 11, 'fill': 'green', 'text-anchor': 'start' });
+
+    </script>
+
+</body>
+</html>

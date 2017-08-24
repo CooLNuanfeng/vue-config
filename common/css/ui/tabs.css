@@ -1,0 +1,51 @@
+/* tabs */
+/*
+HTML structure:
+1. without "a" tag:
+<div id="id" class="tabs">
+	<ul class="tabs-nav clearfix">
+		<li class="current">Tab1</li>
+		<li>Tab2</li>
+		<li>Tab3</li>
+	</ul>
+	<div class="tabs-panel"></div>
+	<div class="tabs-panel"></div>
+	<div class="tabs-panel"></div>
+</div>
+
+2. with "a" tag
+<div id="id">
+	<ul class="tabs-nav-a clearfix">
+		<li><a href="#" class="current">Tab1</a></li>
+		<li><a href="#">Tab2</a></li>
+		<li><a href="#">Tab3</a></li>
+	</ul>
+	<div class="tabs-panel"></div>
+	<div class="tabs-panel"></div>
+	<div class="tabs-panel"></div>
+</div>
+
+3. options
+"tab-radius" is for tab border-radius
+"tab-more" is for more button
+
+Require:
+//common/libs/tools/tabs.min.js
+
+Domready JS Code:
+var $idPane = $id.find('.tabs-pane');
+$('ul.tabs-nav').tabs($idPane);
+*/
+.tabs{position:relative; z-index:1;}
+.tabs-nav, .tabs-nav-a{border-bottom:2px solid #7EB929;}
+.tabs-nav li, .tabs-nav-a a{float:left; width:auto; _width:0; white-space:nowrap; height:30px; margin-right:3px; padding:0 1.5em; border-width:1px 1px 0 1px; border-color:#D7D7D7; border-style:solid; cursor:pointer; background:#EEE; background:-webkit-gradient(linear, 0 0, 0 bottom, from(#FFF), to(#EEE)); background:-webkit-linear-gradient(#FFF, #EEE); background:-moz-linear-gradient(#FFF, #EEE); background:-ms-linear-gradient(#FFF, #EEE); background:-o-linear-gradient(#FFF, #EEE); background:linear-gradient(#FFF, #EEE); font-size:12px; line-height:30px; text-align:center; color:#333;}
+.tabs-nav li.current, .tabs-nav-a a.current{border-color:#7EB929; background:#7EB929; font-weight:bold; color:#FFF; cursor:default;}
+.tabs-nav-a li{float:left; width:auto; margin-right:3px; font-size:12px; line-height:25px; text-align:center; color:#333;}
+.tabs-nav-a a{display:block; float:none; margin-right:0;}
+.tabs-nav-a a:hover{color:#F60;}
+.tabs-nav-a a.current:hover{color:#FFF;}
+.tabs-panel, .tabs-pane{padding:10px 0;}
+.tabs-radius li, .tabs-radius a{-webkit-border-radius:2px 2px 0 0; -moz-border-radius:2px 2px 0 0; border-radius:2px 2px 0 0;}
+.tabs-action{display:block; position:absolute; z-index:2; top:0; right:0;}
+.tabs-more{display:block; position:absolute; z-index:2; top:6px; right:8px; height:15px; font:12px/15px SimSun; color:#666;}
+.tabs-more:hover{color:#F60;}

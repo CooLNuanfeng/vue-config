@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>h5</title>
+    <link rel="stylesheet" type="text/css" href="http://static2.51fanli.net/webapp/css/base.css" />
+
+    <script src="http://static2.51fanli.net/common/libs/gmu/zepto.min.js"></script>
+    <script src="http://static2.51fanli.net/webapp/js/base.js"></script>
+
+    <style>
+        .histogram { display: -webkit-box; -webkit-box-orient: vertical; width: 100%; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 10px; }
+
+        .histogram li { position: relative; height: 20px; padding-left:40px; margin-bottom: 5px; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; background-color: #61A7C4; line-height: 20px; color: #fff; border-bottom: 3px solid #4290b0; }
+        .histogram li:after { position: absolute; top: 0; right: 0; content: attr(data-percentage)"元"; color: #fea; line-height: 20px; }
+        .histogram li:before { position: absolute; top: 0; left: 0; content: attr(data-m); line-height: 20px; }
+    </style>
+
+</head>
+<body>
+
+    <ul class="histogram" id="J_histogram"></ul>
+
+    <script>
+        var dataArray = [{ m: "1月", c: 766 }, { m: "2月", c: 1266 }, { m: "3月", c: 1366 }, { m: "4月", c: 466 },
+             { m: "5月", c: 1566 }, { m: "6月", c: 166 },
+             { m: "7月", c: 1766 }, { m: "8月", c: 1866 },
+             { m: "9月", c: 1966 },
+             { m: "10月", c: 1066 },
+             { m: "11月", c: 1166 },
+             { m: "12月", c: 766 }];
+
+        var costArray = dataArray.map(function (item) {
+            return item.c;
+        });
+
+        var monthArray = dataArray.map(function (item) {
+            return item.m;
+        });
+
+        var max = Math.max.apply(null, costArray) * 120 / 100;
+
+        var liHtml = new StringBuilder();
+
+        for (var i = 0, len = monthArray.length; i < len; ++i) {
+            liHtml.append("<li style='width:0;' data-width='{0}%' data-percentage='{1}' data-m='{2}'></li>".format(costArray[i] / max * 100, costArray[i], monthArray[i]));
+        }
+
+        $("#J_histogram").append(liHtml.toString());
+
+        setTimeout(function () {
+            $("#J_histogram li").each(function () {
+                (function ($li) {
+                    $li.css("width", $li.attr("data-width"))
+                }($(this)));
+            });
+        }, 25);
+
+    </script>
+
+</body>
+</html>

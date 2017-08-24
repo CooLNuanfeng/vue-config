@@ -1,0 +1,27 @@
+.pincode {position:relative;}
+.pincode-item {position:relative; display:inline-block; height:0.96rem; width:1.12rem; border:1px solid #bbb; border-left:none; outline:none; font-size:0.24rem; text-align:center; line-height:0.96rem; color:#fff; vertical-align:middle; overflow:hidden;}
+
+.pincode-item:nth-of-type(1) {border-left:1px solid #bbb; border-radius:0.1rem 0rem 0rem 0.1rem;}
+.pincode-item:nth-last-of-type(1) {border-radius:0 0.1rem 0.1rem 0;}
+
+.pincode-circle:after {content:""; width:0.24rem; height:0.24rem; background-color:#000; border-radius:50%; position:absolute; top:50%; left:50%; margin:-0.12rem 0 0 -0.12rem;}
+.pincode .pincode-input {position:absolute; top:0; left:-9999px;}
+
+.paypassword-verify-dl-container {box-sizing:border-box; width:6.9rem;}
+.paypassword-verify-dl {position:relative; padding:0.48rem 0.32rem 0.8rem; background:#fff; overflow:hidden;}
+.paypassword-verify-dl .verify-head {height:1.25rem; line-height:0.5rem; color:#000; text-align:center;}
+.paypassword-verify-dl .verify-head h5 {font-size:0.36rem; color:#000;}
+.paypassword-verify-dl .verify-head .err {color:#ff5656;}
+.paypassword-verify-dl .verify-head .sub {font-size:0.24rem;}
+.paypassword-verify-dl .verify-head em {font-style:normal; color:#ff5656;}
+.paypassword-verify-dl .dialog-close {position:absolute; top:-0.12rem; right:0.04rem; width:0.8rem; height:0.8rem; line-height:.8rem; text-align:center; font-size:0.48rem; color:#666; font-family:SimSun; background:none; z-index:1;}
+.paypassword-verify-dl .pincode {margin-bottom:0.26rem;}
+.paypassword-verify-dl .pincode-item, 
+.paypassword-verify-dl .pincode-input {width:1.02rem; height:0.96rem; line-height:0.96rem;}
+.paypassword-verify-dl .forget {float:right; font-size:0.24rem; color:#43b149;}
+
+.paypassword-verify-dl-container .verify-succ {display:none; box-sizing:border-box; width:5.44rem; height:3.74rem; border-radius:0.1rem; margin:0 auto; padding-top:0.4rem; background:#fff; text-align:center; font-weight:600;}
+.paypassword-verify-dl-container .succ-img {margin-bottom:0.12rem;}
+
+.fl-hairlines .pincode, 
+.fl-hairlines .pincode-item {border-width:0.5px;}

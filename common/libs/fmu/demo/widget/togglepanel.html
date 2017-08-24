@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Panel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" /> 
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+        .demo { margin: 20px 0;  text-align:center;}
+    </style>
+
+    <script src="../../../fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="../../../fmu/js/core/fmu.js"></script>
+    <script src="../../../fmu/js/core/widget.js"></script>
+    <script src="../../../fmu/js/widget/togglepanel.js"></script>
+</head>
+
+<body>
+
+    <section class="description">
+        <p> Toggle Panel </p>
+
+    </section>
+
+    <section class="demo">
+        <div id="uppanel" style="width: 100%; display: none; background-color: #f60; height: 150px;"></div>
+        <div>
+            <button id="up" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">向上</button>
+            <button id="updeactivate" class="fui-btn fui-btn-s fui-btn-rect fui-btn-white">向上隐藏</button>
+        </div>
+
+        <div id="downpanel" style="width: 100%; display: none; background-color: #f60; height: 50px;"></div>
+        <div style="margin-top: 20px;">
+            <button id="down" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">向下</button>
+            <button id="downdeactivate" class="fui-btn fui-btn-s fui-btn-rect fui-btn-white">向下隐藏</button>
+        </div>
+
+        <div id="leftpanel" style="width: 50px; display: none; background-color: #f60; height: 100%;"></div>
+        <div style="margin-top: 20px;">
+            <button id="left" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">向左</button>
+            <button id="leftdeactivate" class="fui-btn fui-btn-s fui-btn-rect fui-btn-white">向左隐藏</button>
+        </div>
+
+        <div id="rightpanel" style="width: 50px; display: none; background-color: #f60; height: 100%;"></div>
+        <div style="margin-top: 20px;">
+            <button id="right" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">向右有遮罩</button>
+            <button id="rightdeactivate" class="fui-btn fui-btn-s fui-btn-rect fui-btn-white">向右隐藏</button>
+        </div>
+    </section>
+    <script>
+
+        (function () {
+            // 向上呼出
+            var tpi = new FMU.UI.TogglePanel();
+            tpi.direction = "up";
+            tpi.$toggleEle = $("#uppanel");
+            tpi.setup();
+
+            $("#up").on("click", function () {
+                tpi.activate();
+            });
+
+            $("#updeactivate").on("click", function () {
+                tpi.deactivate();
+            });
+        }());
+
+        (function () {
+            // 向下呼出
+            var tpi = new FMU.UI.TogglePanel();
+            tpi.direction = "down";
+            tpi.$toggleEle = $("#downpanel");
+            tpi.setup();
+
+            $("#down").on("click", function () {
+                tpi.activate();
+            });
+
+            $("#downdeactivate").on("click", function () {
+                tpi.deactivate();
+            });
+        }());
+
+        (function () {
+            // 向左呼出
+            var tpi = new FMU.UI.TogglePanel();
+            tpi.direction = "left";
+            tpi.$toggleEle = $("#leftpanel");
+            tpi.setup();
+
+            $("#left").on("click", function () {
+                tpi.activate();
+            });
+
+            $("#leftdeactivate").on("click", function () {
+                tpi.deactivate();
+            });
+        }());
+
+        (function () {
+            // 向右呼出
+            var tpi = new FMU.UI.TogglePanel();
+            tpi.direction = "right";
+            tpi.mask = true;
+            tpi.$toggleEle = $("#rightpanel");
+            tpi.setup();
+
+            $("#right").on("click", function () {
+                tpi.activate();
+            });
+
+            $("#rightdeactivate").on("click", function () {
+                tpi.deactivate();
+            });
+        }());
+
+    </script>
+
+</body>
+</html>

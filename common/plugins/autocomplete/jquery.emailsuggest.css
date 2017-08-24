@@ -1,0 +1,8 @@
+.wrap-mail {position: relative;display:inline-block;overflow: hidden;}
+.email-suggest-box,.email-box{position: relative;}
+.email-suggest-box ul {position:absolute;background:#fff;border:1px solid #D7D7D7;overflow: hidden;z-index:10000;}
+.email-suggest-box li {height:24px;line-height:24px;text-indent: 8px;font-size: 14px;font-family: Arial;white-space: nowrap;}
+.email-suggest-box li a {display:block;width:100%;color:#000;cursor:pointer;}
+.email-suggest-box .ui-state-hover,#email-suggest-box .ui-state-active{background:#FFEA95;}
+.btn-clear {display: none;width:10px;height:11px;position: absolute;right:10px;top:10px;background:url(/common/images/icon/ico-close.png) no-repeat 0 -27px;z-index: 1;}
+.btn-clear:hover{background-position: 0 0;}

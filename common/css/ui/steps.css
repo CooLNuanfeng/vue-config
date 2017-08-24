@@ -1,0 +1,21 @@
+/**********************************************************************
+<div class="pp_steps four_steps">
+    <ol>
+        <li class="first done"><span>1.step_1</span></li>
+        <li class="next current"><span>2.step_2</span></li>
+        <li class=""><span>3.step_3</span></li>
+        <li class="last"><span>4.step_4</span></li>
+    </ol>
+</div>
+**********************************************************************/
+.pp_steps ol { font-size: 14px; height: 35px; line-height: 35px; list-style-type: none; }
+    .pp_steps ol li { float: left; background: #F0F0F0 url("../../images/steps/stepssprite.png") no-repeat scroll 0 -40px; text-align: center; width: 194px; }
+        .pp_steps ol li.first { background-image: none; -webkit-border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px; }
+        .pp_steps ol li.current { background-color: #88BB33; background-position: 0 -80px; font-weight: bold; color: #fff; }
+        .pp_steps ol li.next { background-position: 0 0; }
+        .pp_steps ol li.last { -webkit-border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px; }
+        .pp_steps ol li.done { background-color: #CCF090; background-position: 0 -120px; }
+
+.four_steps ol li { width: 194px; }
+.three_steps ol li { width: 259px; }
+.two_steps ol li { width: 388px; }

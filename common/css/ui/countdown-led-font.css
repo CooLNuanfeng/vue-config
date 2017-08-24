@@ -1,0 +1,16 @@
+/* countdown-led-font */
+/*
+HTML structure:
+<div class="led-font">
+	0123456789
+</div>
+*/
+
+@font-face {font-family:'led-font';
+    src:url('/common/images/countdown/led-font.eot');
+    src:url('/common/images/countdown/led-font.eot?#iefix') format('embedded-opentype'),
+    url('/common/images/countdown/led-font.woff') format('woff'),
+    url('/common/images/countdown/led-font.ttf') format('truetype'),
+    url('/common/images/countdown/led-font.svg#ds-digitalnormal') format('svg');
+}
+.led-font{font-family:led-font;}

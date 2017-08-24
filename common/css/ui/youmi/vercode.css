@@ -1,0 +1,8 @@
+.ym-vc-wrap-verify{position:relative; float:left;}
+.ym-vc-wrap-verify i { position: absolute; right: 8px;top: 7px;width: 16px;height: 16px;background: url(/common/images/icon/ico-success-s.png) no-repeat;}
+.ym-vc-wrap-verify i.ym-vc-error{background: url(/common/images/icon/ico-error-s.png) no-repeat;}
+.ym-vc-input{width:71px; height:28px; padding:0 0 0 5px; border:1px solid #ddd; outline:none; font-size:14px; font-variant:small-caps; text-transform: uppercase; line-height: 28px\9;}
+.ym-vc-input-focus {border-color: #F5D1AE; }
+.ym-vc-img{float:left; width:70px; height:30px; margin: 0 5px;}
+.ym-vc-text{float:left; width:50px; line-height:15px;}
+.ym-vc-text a:hover { color:#060; text-decoration:underline;}

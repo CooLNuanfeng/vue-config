@@ -1,0 +1,38 @@
+/* FAQ */
+.faq-area{border-top:3px solid #56BA37; background:#FFF;}
+.faq-area .container{position:relative; overflow:hidden;}
+
+.faq-list{padding:20px 0 10px; margin-bottom:15px;}
+.faq-col{float:left; white-space:nowrap;width:170px;}
+.faq-col dt{height:30px; line-height:30px; font-size:16px; font-weight:bold; color:#444;}
+.faq-col dd{display:block; padding:5px 0 0 0;}
+.faq-col dd a{display:block; height:22px; line-height:22px;}
+.faq-col-last{width:130px;float:right;}
+
+.faq-ensure{padding:20px 0;border-bottom:1px dashed #DDD;}
+.faq-ensure li{float:left; width:115px; margin-right:50px; text-align:center; font-size:14px; line-height:18px; color:#666;}
+.faq-ensure li i{display:block; width:52px; height:52px; margin:0 auto 5px; background:url(/common/images/footer/bg-faq1.alpha.png) no-repeat;}
+.faq-ensure li i.ico-ensure1{background-position:0 0;}
+.faq-ensure li i.ico-ensure2{background-position:-51px 0;}
+.faq-ensure li i.ico-ensure3{background-position:-102px 0;}
+.faq-ensure li i.ico-ensure4{background-position:-153px 0;}
+.faq-ensure li i.ico-ensure5{background-position:-204px 0;}
+.faq-ensure li i.ico-ensure6{background-position:-255px 0;}
+
+.faq-app{width:1020px; padding:15px 0 35px;}
+.faq-app-block{float:left; _display:inline; width:420px;}
+.faq-app .smart-code{float:left; width:75px; height:75px; margin:5px 10px 0 0; border:1px solid #DDD; background:url(/common/images/footer/bg-faq1.alpha.png) no-repeat;}
+.faq-app .smart-code-fanli{background-position:0 -97px;}
+.faq-app .smart-code-weixin{background-position:-161px -96px;}
+.faq-app dl{color:#666; float:left; width:243px;}
+.faq-app .title{font-size:20px; font-weight:bold;}
+.faq-app .sub-title{font-size:14px; margin-bottom:4px;}
+.faq-app .btn-app-box{float:left; width:110px;}
+.faq-app .btn-app{display:block; width:100px; height:28px; margin-bottom:9px; line-height:28px; border:1px solid #DDD; text-align:center; margin-right:10px; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; background:#f2f2f2; background:-moz-linear-gradient(top,  #f2f2f2 0%, #e0e0e0 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#e0e0e0)); background:-webkit-linear-gradient(top,  #f2f2f2 0%,#e0e0e0 100%); background:linear-gradient(to bottom,  #f2f2f2 0%,#e0e0e0 100%);}
+.faq-app .btn-app:hover{color:#666;}
+.faq-app .btn-app-last{margin-right:0;}
+.faq-app .btn-app i{display:inline-block; *display:inline; *zoom:1; width:20px; height:20px; background:url(/common/images/footer/bg-faq1.alpha.png) no-repeat; vertical-align:middle; margin-right:3px;}
+.faq-app .btn-app .ico-android{background-position:0 -65px;}
+.faq-app .btn-app .ico-ios{background-position:-28px -65px;}
+.faq-app-block-fanli{margin-right:88px; border-right:1px dashed #DDD;}
+.faq-app-block-fanli dl{width:145px;}

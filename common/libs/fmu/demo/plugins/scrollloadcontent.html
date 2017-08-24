@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Load Content</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+        .demo .blank-box { height: 400px; background: #FF6A00; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/extend/jquery.extend.js"></script>
+    <script src="/common/libs/fmu/js/plugins/scrollloadcontent.js"></script>
+
+</head>
+<body>
+
+    <section class="description">
+        <p>Scroll Load Content</p>
+    </section>
+
+    <section class="demo">
+        <div class="blank-box">分割线</div>
+        <div class="J_scrollloadcontent">
+            <div style="height: 600px; background: #0094ff">content内容</div>
+            <a class="J_scrollloadcontent_tag" href="javascript:void(0)" style="display: block"></a>
+            <div class="J_scrollloadcontent_loading">加载中...</div>
+        </div>
+    </section>
+
+    <script>
+
+        (function () {
+            $(".J_scrollloadcontent").scrollloadcontent({
+                ajaxUrl: 'http://static2.51fanli.net/common/libs/fmu/demo/plugins/scrollloadcontent2.html',
+                ajaxType: 'html',
+                replacePre: 'scrollloadcontent',
+                callback: function ($newHtml, $container) {
+                    console.log($newHtml.html())
+                }
+            });
+        }());
+
+    </script>
+
+</body>
+</html>

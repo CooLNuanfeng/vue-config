@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<title>Calendar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<meta name="format-detection" content="email=no">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="stylesheet" href="/webapp/css/base.css" />
+<link rel="stylesheet" href="/common/libs/fmu/css/calendar.css" />
+</head>
+<body>
+
+<style>
+    .cld-trigger{display:block; padding:10px; height:50px; line-height:50px; text-align:center; font-size:15px;}
+    .cld-trigger span{margin-left:15px; color:#000;}
+</style>
+
+<div>
+<a id="J_from" class="cld-trigger" href="javascript:void(0);">From <span></span></a>
+    <a id="J_to" class="cld-trigger" href="javascript:void(0);">To <span></span></a>
+</div>
+
+<div id="J_calendar_from" data-firstDay="5"></div>
+<div id="J_calendar_to" data-firstDay="5"></div>
+
+<script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+<script src="/common/libs/fmu/js/core/fmu.js"></script>
+<script src="/common/libs/fmu/js/core/widget.js"></script>
+<script src="/common/libs/fmu/js/widget/togglepanel.js"></script>
+<script src="/common/libs/fmu/js/widget/calendar.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var today = new Date; 
+        var Calendar = FMU.UI.Calendar;
+        var $from = $('#J_calendar_from'); 
+        var $to = $('#J_calendar_to'); 
+        var defOpts = {
+
+            "minDate": today, 
+            "maxDate": new Date(today.getFullYear(), today.getMonth(), today.getDate() + 29), 
+            "defaultText": '今天' 
+
+        };
+        var calFrom = new Calendar($from, $.extend(true, {}, defOpts, {
+
+            "titleText": '选择入住日期', 
+            "selectText": '入住', 
+            "onSelect": function (date, $item, calendar) {
+
+                refreshDate($('#J_from').find('span'), calendar.formatDate(date));
+
+                calTo
+                    .options({
+
+                        "minDate": date, 
+                        "maxDate": Math.min(new Date(date.getFullYear(), date.getMonth(), date.getDate() + 6), calFrom.options('maxDate'))
+
+                    })
+                    .refresh()
+                    .setDate(Math.min(new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1), calFrom.options('maxDate')));
+
+                if (calTo.getDate()) {
+                    refreshDate($('#J_to').find('span'), calendar.formatDate(calTo.getDate()));
+                }
+
+            }
+
+        })); 
+
+        var calTo = new Calendar($to, $.extend(true, {}, defOpts, {
+
+            "titleText": '选择离开日期', 
+            "selectText": '离开', 
+            "onSelect": function (date, $item, calendar) {
+
+                refreshDate($('#J_to').find('span'), calendar.formatDate(date)); 
+
+            }
+
+        })); 
+
+        $('#J_from').on('click', function () {
+
+            calFrom.show(); 
+
+        });
+
+        $('#J_to').on('click', function () {
+
+            calTo.show(); 
+
+        });
+
+        function refreshDate($container, date) {
+
+            $container.html(date); 
+
+        }
+
+    });
+</script>
+</body>
+</html>

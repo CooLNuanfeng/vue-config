@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>clipboard for PC</title>
+
+    <script src="//static2.51fanli.net/common/libs/jquery/jquery.min.js"></script>
+    <script src="//static2.51fanli.net/common/libs/headjs/head.load.min.js"></script>
+    <script src="//static2.51fanli.net/common/plugins/fclipboard/jquery.fclipboard.min.js"></script>
+
+</head>
+<body>
+
+<span id="foo_notinput">hello(notinput)</span>
+<button class="btn" data-clipboard-target="foo_notinput">Copy</button>
+<br><br>
+<input id="foo_input" type="text" value="hello(input)">
+<button class="btn" data-clipboard-target="foo_input">Copy</button>
+<br><br>
+<textarea id="foo_textarea">hello(textarea)</textarea>
+<button class="btn" data-clipboard-target="foo_textarea">Copy</button>
+
+<script>
+    $('.btn').fclipboard({
+        onSuccess: function(copytext){
+            alert('复制成功')
+        },
+        onError: function(){
+            alert('请ctrl+c手动复制');
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>raphael polyline</title>
+    <script src="raphael.js"></script>
+    <script src="../underscore/underscore-1.6.0.js"></script>
+    <script src="raphael.popup.js"></script>
+
+</head>
+<body>
+
+    <div id="J_polyline"></div>
+    <div id="J_pie"></div>
+
+    <script src="raphael.popup.js"></script>
+    <script src="raphael.polyline.js"></script>
+    <script src="raphael.piechart.js"></script>
+
+    <script>
+        Raphael("J_polyline", 800, 240).polyLine({
+            dataArray: [{ m: "1月", c: 766 },
+            { m: "2月", c: 1266 },
+            { m: "3月", c: 1366 },
+            { m: "4月", c: 466 },
+            { m: "5月", c: 1566 },
+            { m: "6月", c: 166 },
+            { m: "7月", c: 1766 },
+            { m: "8月", c: 1866 },
+            { m: "9月", c: 1966 },
+            { m: "10月", c: 1066 },
+            { m: "11月", c: 1166 },
+            { m: "12月", c: 766 }]
+        });
+
+
+        var dataArray = [{ per: 40, item: "top1 服装" },{ per: 16, item: "top2 美食" },
+        { per: 12, item: "top3 母婴" }, { per: 2, item: "top4 家居" }, { per: 2, item: "top5 鞋子" }];
+        var values = _.map(dataArray, function (item) {
+            return item.per;
+        });
+        var labels = _.map(dataArray, function (item) {
+            return item.item;
+        });
+        var pieR = 90;
+        Raphael("J_pie", 500, (pieR + 20) * 2 + 1).pieChart(pieR + 20, pieR + 20, pieR, values, labels, "#fff");
+
+    </script>
+
+
+
+</body>
+</html>

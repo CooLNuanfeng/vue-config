@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Button Activate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/form.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align:center; color: #000; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/formbtnactivate.js"></script>
+</head>
+
+<body>
+    <section class="description">
+        <p>Form Button Activate</p>
+    </section>
+
+    <section id="J_fmu_form">
+        <div class="fui-form">
+            <div class="fui-form-row">
+                <div class="fui-form-item">
+                    <input type="text" class="fui-input J_required_input" placeholder="充值号码" />
+                </div>
+                <div class="fui-form-item">
+                    <input type="password" class="fui-input J_required_input" placeholder="充值金额" />
+                </div>
+            </div>
+            <div class="fui-form-row fui-form-vcode">
+                <input type="text" class="fui-input J_required_input" placeholder="验证码" />
+                <input type="button" value="获取验证码" class="fui-vcode-btn" />
+            </div>
+            <div class="fui-form-text">
+                <button disabled id="J_form_submit" class="fui-btn fui-btn-full fui-btn-green fui-btn-m">立即充值</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        var form = new FMU.UI.FormBtnActivate();
+        form.setup();
+
+    </script>
+</body>
+</html>

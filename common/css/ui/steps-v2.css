@@ -1,0 +1,29 @@
+/* steps */
+/*
+HTML:
+<div class="process-box">
+	<div class="process">
+		<ol>
+			<li class="first done">1.step_1</li>
+			<li class="current">2.step_2</li>
+			<li class="next">3.step_3</li>
+			<li class="last">4.step_4</li>
+		</ol>
+	</div>
+</div>
+*/
+
+.process-box{height:40px; overflow:hidden;}
+.process-box .process{margin-top:-16px;}
+
+.process{height:72px; font:bold 14px/25px Arial, Helvetica, sans-serif; text-align:center;}
+.process li{float:left; width:259px; height:72px; background:url(../../images/steps/process.png) #F0F0F0 no-repeat 0 -75px;}
+.process li.first{background-image:none;}
+.process li.next{background-position:0 0;}
+.process li.last{}
+.process li.current{background-color:#8B3; background-position:0 -150px; color:#FFF;}
+.process li.done{background-color:#CCF090; background-position:0 -225px;}
+
+.four-steps li{width:194px;}
+.three-steps li{width:259px;}
+.two-steps li{width:388px;}

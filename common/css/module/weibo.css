@@ -1,0 +1,20 @@
+/*微博发布框*/
+body{position:relative;}
+
+.wb-box{width:634px;margin:0 auto;}
+.wb-orange{color:#f60;}
+.wb-title{background:url(../../images/weibo/wb_logo.png) no-repeat right 0;}
+.wb-title h6{width:354px;height:28px;background:url(../../images/weibo/wb_title.png) no-repeat 0 50%;overflow:hidden;text-indent:-1000px;}
+.wb-textarea{display:block;margin:8px 0 12px;width:97%;height:100px;color:#666;font-size:14px;line-height:1.8em;border:solid 1px #d7d7d7;padding:6px 10px;}
+.wb-btn{text-align:right;}
+.wb-textsum{color:#9a9a9a;margin-left:5px;float:left;}
+.wb_publishbtn, .wb_publishbtn span {background: url(../../images/weibo/wb_publish_btn.png) no-repeat scroll 0 0 transparent;text-decoration: none;}
+.wb_publishbtn {background-position: 0 -68px;padding-left: 28px;}
+.wb_publishbtn, .wb_publishbtn span {color: #FFFFFF;display: inline-block;font-size: 14px;height: 24px;line-height: 24px;}
+.wb_publishbtn span {background-position: right -94px;padding: 0 9px 0 4px;}
+.wb-ie6box{padding-left:210px;padding-bottom:20px;}
+
+.WB_publishBox .WB_send_stat{width: 410px;left:0;}
+.WB_pubBoxHead{text-align:left;}
+.WB_logo_S{text-align:left;}
+.WB_publishBox{width:430px;}

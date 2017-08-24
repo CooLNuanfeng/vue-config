@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagination</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/pagination.css" />
+
+    <style>
+        body { background: #fff; }
+        .description { margin-bottom: 10px; }
+        .description p { color: #798188; }
+        .description .css-dep { color: #000; }
+        .description .css-nodep { color: #f60; }
+        .description pre { background-color: #26292C; color: #FA9A4B; }
+        .demo { margin: 30px 0; text-align: center; }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="description">
+        <p>翻页控件</p>
+        <p class="css-dep">fmu/css/pagination.css</p>
+    </section>
+    <section class="demo">
+        <div class="fmu-pagination">
+            <a class="fmu-pagination-anchor fmu-page-first fmu-page-gray" href="#">首页</a>
+            <a class="fmu-pagination-anchor" href="#">上一页</a>
+            <select class="fmu-pagination-select J_fmu_page_select">
+                <option value="1">第1页</option>
+                <option value="2">第2页</option>
+                <option value="100">第100页</option>
+            </select>
+            <a class="fmu-pagination-anchor" href="#">下一页</a>
+            <a class="fmu-pagination-anchor fmu-page-end" href="#">末页</a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            [].forEach.call(document.querySelectorAll(".J_fmu_page_select"), function (el, idx) {
+                el.addEventListener("change", function () {
+                    window.location.href = this.value;
+                }, false);
+            });
+        }, false);
+    </script>
+</body>
+</html>

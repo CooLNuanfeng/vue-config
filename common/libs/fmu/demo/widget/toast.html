@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toast</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+   
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/toast.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/toast.js"></script>
+
+</head>
+
+<body>
+
+    <div class="description">
+        <p>Toast</p>
+    </div>
+
+    <a href="javascript:void(0);" class="J_fmu_toast_trigger" title="要提示的文字" style="text-decoration: underline; padding: 10px;">显示提示</a>
+    <a href="javascript:void(0);" class="J_fmu_toast_trigger" title="要提示的文字hhhh2" style="text-decoration: underline; padding: 10px;">显示提示2</a>
+
+    <script>
+        var budoummToast = new FMU.UI.Toast();
+
+        $('.J_fmu_toast_trigger').click(function () {
+            var $this = $(this);
+            budoummToast.open($this.attr('title'));
+        });
+    </script>
+
+</body>
+</html>

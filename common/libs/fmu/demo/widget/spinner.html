@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spinner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/toast.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/spinner.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+        .demo { margin: 20px 0; text-align: center; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/dialog.js"></script>
+    <script src="/common/libs/fmu/js/widget/toast.js"></script>
+    <script src="/common/libs/fmu/js/widget/spinner.js"></script>
+</head>
+
+<body>
+
+    <section class="description">
+        <p>Spinner</p>
+    </section>
+    <section class="demo">
+        <h2>demo1</h2>
+        <section id="J_container_1" class="demo"></section>
+
+        <h2>demo2</h2>
+        <section id="J_container_2" class="demo"></section>
+
+        <h2>demo3:达到最大或最小阈值，加disable的样式</h2>
+        <section id="J_container_3" class="demo"></section>
+    </section>
+    <script>
+        var sI1 = new FMU.UI.Spinner();
+        sI1.$container = $("#J_container_1");
+        sI1.limitBuyOne = true;
+        sI1.limitDisable = true;
+        sI1.setup();
+
+        var sI2 = new FMU.UI.Spinner();
+        sI2.$container = $("#J_container_2");
+        sI2.min = 100;
+        sI2.max = 120;
+        sI2.setup();
+
+        var sI3 = new FMU.UI.Spinner();
+        sI3.$container = $("#J_container_3");
+        sI3.min = 10;
+        sI3.max = 20;
+        sI3.limitDisable = true;
+        sI3.biggerThanMaxHandler = function () {
+            alert("已经是最大值啦");
+        };
+        sI3.smallerThanMinHandler = function () {
+            alert("已经是最小值啦");
+        };
+        sI3.setup();
+
+    </script>
+</body>
+</html>

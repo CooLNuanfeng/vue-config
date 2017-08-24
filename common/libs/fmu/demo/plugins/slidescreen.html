@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide Screen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/slidescreen.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+
+        .fmu-screen-wrap { position: absolute; height: 100%; top: 0; bottom: 0; }
+        /*full screen style*/
+        /*.fmu-screen-wrap { height: 300px; }*/
+        .slidescreen-triggers { position: absolute; bottom: 0; z-index: 10; width: 100%; }
+        .slidescreen-triggers li { display: inline-block; }
+        .slidescreen-triggers .current { background: #000; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/plugins/slidescreen.js"></script>
+
+</head>
+<body>
+
+    <section class="description">
+        <p>Slide Screen</p>
+    </section>
+
+    <div id="J_screen_wrap" class="fmu-screen-wrap">
+        <div class="J_screen_inner fmu-screen-inner">
+            <section style="background: #00A1FF">1</section>
+            <section style="background: #FF7D00">2</section>
+            <section style="background: #06A343">3</section>
+            <section style="background: #A6A343">4</section>
+            <section style="background: #E6A343">5</section>
+            <section style="background: #C6A343">6</section>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            $("#J_screen_wrap").slidescreen({
+                callback: function (p) {
+                    //console.log(p);
+                }
+            });
+        }());
+
+    </script>
+
+</body>
+</html>

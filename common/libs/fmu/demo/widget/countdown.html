@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/countdown.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+        .demo { margin: 30px 0; text-align: center; }
+        .btns { margin-top: 30px; text-align: center; }
+        .btns button { margin-right: 10px; }
+        .log { margin: 10px; padding: 5px; text-align: left; background: #fff; border: 1px solid #999; font-size: 12px; line-height: 16px; color: #999; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/countdown.js"></script>
+
+</head>
+
+<body>
+    <section class="description">
+        <p>Countdown</p>
+    </section>
+
+    <section class="demo">
+        <div id="J_countdown" class="fmu-countdown" data-remain="86410">
+            <span class="fmu-countdown-unitbox"><span class="J_day fmu-countdown-unit"></span>天</span>
+            <span class="fmu-countdown-unitbox"><span class="J_hour fmu-countdown-unit"></span>时</span>
+            <span class="fmu-countdown-unitbox"><span class="J_minute fmu-countdown-unit"></span>分</span>
+            <span class="fmu-countdown-unitbox"><span class="J_second fmu-countdown-unit"></span>秒</span>
+        </div>
+
+        <div class="btns">
+            <button id="J_pause" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">pause</button>
+            <button id="J_reset" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">reset</button>
+        </div>
+
+        <div class="log" id="J_log"></div>
+    </section>
+
+    <script>
+        var cd = new FMU.UI.Countdown();
+        cd.$output = $("#J_countdown");
+
+        cd.type = "all";
+        cd.onExpiry = function () {
+            console.log("onExpiry");
+            addLog("倒计时结束");
+        };
+        cd.setup();
+
+        var $log = $("#J_log");
+        $log.append("<div>倒计时开始...");
+
+        $("#J_pause").on("touchend", function () {
+            cd.pause();
+            addLog("已经暂停, 倒计时还剩{0}s".format(cd.remain));
+        });
+
+        $("#J_reset").on("touchend", function () {
+            cd.reset();
+            addLog("重新开始, 倒计时还剩{0}s".format(cd.remain));
+        });
+
+        function addLog(content) {
+            $log.append("<div>{0}</div>".format(content));
+        }
+
+    </script>
+</body>
+</html>

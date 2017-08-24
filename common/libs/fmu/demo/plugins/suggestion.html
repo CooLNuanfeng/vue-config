@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suggestion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/suggestion.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/plugins/suggestion.js"></script>
+
+</head>
+
+<body>
+    <section class="description">
+        <p>Suggestion</p>
+
+    </section>
+    <section class="demo">
+        <input type="text" id="J_sug" style="display:block; width:90%; height: 24px; margin: 0 auto; box-sizing:border-box;" />
+    </section>
+
+
+    <div class="search-module" style="padding:10px 10px 0;">
+        <form action="" method="get" id="J_search_from">
+            <div class="fmu-suggestion-wrap">
+                <i class="fmu-suggestion-icon-search"></i>
+                <input type="search" class="fmu-suggestion-input" name="q" id="J_search_input" autocomplete="off" placeholder="请输入游戏名称或关键词" />
+                <a href="javascript:history.back();" class="fmu-suggestion-cancel" id="J_search_cancel">取消</a>
+            </div>
+        </form>
+    </div>
+    <div class="J_search_result_list"></div>
+    <script>
+        var testArr = [ { text: "1", value: "http://www.fanli.com/" },
+                        { text: "21", value: "http://www.fanli.com/" },
+                        { text: "22", value: "http://www.fanli.com/" },
+                        { text: "AAb", value: "http://www.fanli.com/" },
+                        { text: "aaB", value: "http://www.fanli.com/" },
+                        { text: "ab", value: "http://www.fanli.com/" },
+                        { text: "56", value: "http://www.fanli.com/" },
+                        { text: "67", value: "http://www.fanli.com/" },
+                        { text: "78", value: "http://www.fanli.com/" },
+                        { text: "89", value: "http://www.fanli.com/" },
+                        { text: "90", value: "http://www.fanli.com/" },
+                        { text: "12", value: "http://www.fanli.com/" }];
+
+        $("#J_sug").suggestion({
+            source: testArr,
+            //source: "http://www.fehelper.com/story/13667/01/api?jsoncallback=?",
+            select: function (text) {
+                console.log("已选择: " + text);
+            },
+            offset: { y: 5, w: 4 },
+            //enableHistory: true,
+        });
+
+        var $form = $("#J_search_from");
+        var $input = $("#J_search_input");
+        $input.suggestion({
+            source: testArr,
+            //source: 'http://www.fehelper.com/story/13667/01/api?jsoncallback=?',
+            select: function (text) {
+                //$form.submit();
+                console.log($.fn.suggestion.store);
+            },
+            enableHistory: true, //是否开启历史记录功能，默认为false，是为了兼容以前版本
+            resultClass: "J_search_result_list", //使用自定义的结果列表
+            adjustResultPanel: false, //是否调整结果列表的位置，默认为true
+            hidePanelBlur: true, //input框失去焦点时是否隐藏结果列表，默认false
+        });
+
+        $form.submit(function(){
+            $.fn.suggestion.store($input.val()); // $.fn.suggestion.store是插件对外暴露的function，用来保存搜索历史记录
+        })
+
+
+    </script>
+</body>
+</html>

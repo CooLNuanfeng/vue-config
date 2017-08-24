@@ -1,0 +1,1 @@
+var csController = new MagicBarCustomService();

@@ -1,0 +1,12 @@
+/*前缀fmu, class为自定义, 可自定义样式*/
+.fmu-screen-wrap{position:relative; width:100%; height:100%; overflow:hidden;}
+.fmu-screen-inner{z-index:1; position:absolute; left:0; top:0; width:100%; height:100%; -webkit-transition:all 0.3s linear; -webkit-transform:translateY(0); transition:all 0.3s linear; transform:translateY(0); -webkit-backface-visibility:hidden;}
+.fmu-screen-inner section{overflow:hidden; position:relative; width:100%; height:100%; z-index:3; -webkit-transform:translate3d(0, 0, 0);}
+.fmu-drag{-webkit-transition:none; transition:none;}
+.fmu-screen-arrow{position:absolute; left:50%; bottom:30px; height:30px; width:30px; margin-left:-15px; text-align:center; -webkit-animation:vertical 1.5s 0s infinite;}
+
+@-webkit-keyframes vertical {
+	0% { -webkit-transform: translateY(0px); }
+	50% { -webkit-transform: translateY(20px); }
+	100% { -webkit-transform: translateY(0px); }
+}

@@ -1,0 +1,28 @@
+/* pagination */
+/*
+HTML structure:
+<div class="pages">
+	<a href="#" class="prev">上一页<s></s></a>
+	<span class="current">1</span>
+	<a href="#">2</a>
+	<span>...</span>
+	<a href="#">10</a>
+	<a href="#" class="next">下一页<s></s></a>
+</div>
+*/
+.pages{margin:20px 0; clear:both; font:12px 'Hiragino Sans GB','Microsoft YaHei','SimSun',sans-serif; color:#060; text-align:center;}
+.pages a, .pages span{display:inline-block; *zoom:1; *display:inline; margin:0 1px; padding:5px 8px;}
+.pages a:link, .pages a:visited{border:1px solid #CCC; background-color:#FFF; color:#060;}
+.pages a:hover, .pages a:active{border:1px solid #7EB929; background-color:#7EB929; color:#FFF;}
+.pages .current{border:1px solid #7EB929; background-color:#7EB929; font-weight:bold; color:#FFF;}
+.pages .prevPage, .pages .nextPage{position:relative; z-index:1;}
+.pages s{position:absolute; width:0; height:0; font-size:0; z-index:2; border-width:5px; border-style:dashed solid; top:8px; overflow:hidden;}
+.pages .prevPage{padding-left:15px;}
+.pages .prevPage s{border-color:#FFF #F60 #FFF #FFF; left:0;}
+.pages .prevPage:hover s, .pages .prevPage:active s{border-color:#7EB929 #FFF #7EB929 #7EB929;}
+.pages .nextPage{padding-right:15px;}
+.pages .nextPage s{border-color:#FFF #FFF #FFF #F60; right:0;}
+.pages .nextPage:hover s, .pages .nextPage:active s{border-color:#7EB929 #7EB929 #7EB929 #FFF;}
+.pages-s{margin:0; text-align:right;}
+.pages-s a, .pages-s span{padding:3px 8px;}
+.pages-s s{top:5px;}

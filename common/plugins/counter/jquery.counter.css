@@ -1,0 +1,43 @@
+.counter-wrap {
+    height:40px;
+    *display:inline;
+    *zoom:1;
+    overflow:hidden;
+    position:relative;
+}
+
+.counter-left {
+    height:30px;
+    width:2px;
+    position:relative;
+    background-image:url(images/counter-left.png);
+    float:left;
+}
+
+.counter-right {
+    height:30px;
+    width:2px;
+    position:relative;
+    background-image:url(images/counter-right.png);
+    float:left;
+}
+
+.counter-spliter {
+    height:30px;
+    width:2px;
+    position:relative;
+    background-image:url(images/counter-spliter.png);
+    float:left;
+}
+
+.counter-number {
+    height:330px;
+    width:17px;
+    position:relative;
+    background-image:url(images/counter-tiles.png);
+    float:left;
+}
+.count-txt {float:left;background:none;line-height: 36px;}
+.wrap-counter {position:relative;float:left;height: 30px;border:3px solid #FF9C00;margin-right: 3px;overflow: hidden;}
+.count-hour,.count-money {width:40px;}
+.count-dot {background: url(images/dot.png) no-repeat;}

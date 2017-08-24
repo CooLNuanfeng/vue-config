@@ -1,0 +1,25 @@
+/* message */
+/*
+HTML structure:
+<div class="message">
+	<h4 class="title">Title</h4>
+	<p>...Message...<a href="#" class="prepend">查看详情&gt;&gt;</a></p>
+	<a href="javascript:void(0);" class="close">关闭</a>
+</div>
+
+Alert message:
+<div class="message msg-alert"></div>
+*/
+.message{padding:5px 20px 5px 30px; border:1px solid #F3C964; background:url(../../../common/images/message/msg-default.png) no-repeat #FFFFCD 7px 7px; color:#666; line-height:20px; position:relative; z-index:1; text-align:left;zoom:1;}
+.message .close{width:9px; height:9px; position:absolute; z-index:2; top:10px; right:10px; cursor:pointer; font:bold 12px/12px 'SimSun',sans-serif; color:#E03D04; text-align:center;}
+.message .title{margin-bottom:5px; font-size:14px; font-weight:bold; color:#333;}
+.message strong{font-weight:bold;}
+.message a:link, .message a:visited{color:#060;}
+.message a:hover, .message a:active{color:#F60;}
+.message a.prepend{margin-left:20px; font-family:SimSun;}
+.message a.bold{font-weight:bold;}
+.msg-none{padding:5px 10px; background:#FFFFCD;}
+.msg-alert{background:url(../../../common/images/message/msg-alert.png) no-repeat #FFFFCD 7px 9px; color:#666;}
+.msg-alert strong{color:#333;}
+.msg-notice{background:url(../../../common/images/message/msg-notice.png) no-repeat #FFFFCD 7px 7px; color:#F30;}
+.msg-margin{margin:5px 0;}

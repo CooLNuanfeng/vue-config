@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Spy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/keybord.css"/>
+
+    <style>
+        html{font-size: 50px;}
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/webapp/js/base.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+
+</head>
+<body>
+
+    <div id="test"></div>
+
+</body>
+
+<!-- 
+/*
+##@import
+    * "/common/libs/fmu/css/keybord.css"
+
+    * "/common/libs/fmu/js/vendors/jquery/jquery.js"
+    * "/webapp/js/base.js"
+    * "/common/libs/fmu/js/core/fmu.js"
+    * "/common/libs/fmu/js/core/widget.js"
+
+##参数
+    * inputWrap: $("body"),    //input父级容器
+    * keybordWrap: $("body"),  //keybord父级容器
+    * touchCallout: false,     //键盘是否需要点击唤起。默认键盘可见
+    * avtiveClass: "active",   //键盘弹出效果依赖class，可更换class后自定义
+    * keyOnClass: "on",        //键盘点击效果class，可更换class后自定义
+    * hideKeybord: false,      //键盘可隐藏，默认不显示取消按钮
+    * callback: $.noop,        //输入6位后回调函数，第一个参数为passwrod，第二个参数为keybord，可调用内部所有方法
+    * cancelCbk: $.noop        //点击取消后回调函数，参数为keybord，可调用内部所有方法
+    * delCbk: $.noop            //点击删除回调函数，第一个参数为passwrod，第二个参数为keybord，可调用内部所有方法
+*/
+ -->
+
+
+    <script src="/common/libs/fmu/js/plugins/keybord.js"></script>
+    <script>
+        $("#test").bindKeybord({
+            inputWrap: $("body"),
+            keybordWrap: $("body"),
+            touchCallout: false,
+            avtiveClass: "active",
+            keyOnClass: "on",
+            hideKeybord: false,
+            callback: function(pw,kb){
+                console.log(pw);
+                kb.hideKeybord();
+            },
+            cancelCbk: function(kb){
+                console.log(kb)
+            }
+        });
+        /*或者下面这种调用方法，可以直接通过mykeybord调用keybord内部所有方法
+        var mykeybord = new FMU.UI.KeyBord();
+        mykeybord.setUp();*/
+    </script>
+</html>

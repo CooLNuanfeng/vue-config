@@ -1,0 +1,14 @@
+body {background:url(../../images/error/bj-1.png) repeat;text-align:left;font-family:simsun;}
+a{font-size:12px;color:#060; text-decoration:none}
+a:hover{color:#f60;text-decoration:none}
+.fault{width:599px;clear:both; margin:300px auto 0;}
+.top{background:url(../../images/error/bj-2.png) no-repeat;width:599px;height:15px;overflow:hidden;}
+.content{background:url(../../images/error/bj-3.png) repeat-y;width:536px;padding:50px 10px 50px 53px;}
+.content .logo{margin:0 35px 0 0;float:left;}
+.content .right{float:left;width:340px;}
+.content .right h3{font-size:14px;font-weight:bold;color:#ff5601;margin:5px 0;}
+.content .text{font-size:14px;color:#666;line-height:22px;}
+.content .jump{margin-top:15px;}
+.content .xinlang{padding:0 30px 0 50px;background:url(../../images/error/xinlang.png) 30px -4px no-repeat;}
+.bottom{background:url(../../images/error/bj-4.png) no-repeat;height:15px;width:599px;}
+.clear{clear:both;height:0;overflow:hidden;}

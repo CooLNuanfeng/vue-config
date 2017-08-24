@@ -1,0 +1,8 @@
+.fmu-css3scrolltext-wrap { height: 72px; overflow: hidden; }
+.fmu-css3scrolltext-wrap ul { -webkit-animation-duration: 8s; animation-duration: 8s; -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-timing-function: linear; animation-timing-function: linear; }
+.fmu-css3scrolltext-wrap li { display: block; height: 24px; line-height: 24px; }
+
+
+.fmu-horizontal-scroll-wrap{height:20px; overflow:hidden;}
+.fmu-horizontal-scroll-wrap ul{width:3000px; -webkit-animation-duration:8s; animation-duration:8s; -webkit-animation-fill-mode:both; animation-fill-mode:both; -webkit-animation-iteration-count:infinite; animation-iteration-count:infinite; -webkit-animation-timing-function:linear; animation-timing-function:linear;}
+.fmu-horizontal-scroll-wrap li{float:left; margin-right:10px; font-size:14px;}

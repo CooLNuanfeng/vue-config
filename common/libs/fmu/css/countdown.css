@@ -1,0 +1,6 @@
+.fmu-countdown{text-align:center; font-size:14px;}
+.fmu-countdown-unitbox{display:inline-block; margin-left:6px;}
+.fmu-countdown-unit{display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; margin-right:2px; border: 1px solid #ccc; background:#fff; vertical-align:middle; border-radius:2px;}
+
+/* fl-hairlines */
+.fl-hairlines .fmu-countdown-unit{border-width:0.5px;}

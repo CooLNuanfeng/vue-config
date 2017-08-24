@@ -1,0 +1,5 @@
+/* for pageflip */
+.pageflip{display:none; position:absolute; top:0; right:0; z-index:2000;}
+.pageflip .flip-small{position:absolute; top:0; right:0; z-index:2002; width:110px; height:110px;}
+.pageflip .flip-large{position:absolute; top:0; right:0; z-index:2001; width:110px; height:110px; overflow:hidden;}
+.pageflip .flip-close{position:absolute; top:0; right:0; z-index:2003; display:block; width:20px; height:20px; background:url(../../images/loading/spacer.png); text-indent:-8000px; overflow:hidden;}

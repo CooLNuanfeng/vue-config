@@ -1,0 +1,23 @@
+/* input */
+.fmu-keybord-input {width: 6.3rem;margin: 0.1rem auto;background-color: #fff;border: solid 1px #359df5;}
+.fmu-keybord-input li {float: left;width: 1.05rem;height: 1.15rem;border-right: solid 1px #ddd;box-sizing: border-box;position: relative;}
+.fmu-keybord-input li:last-child{border: 0;}
+.fmu-keybord-input li .keybord-dot {width: 0.28rem;height: 0.28rem;border-radius: 50%;overflow: hidden;position: absolute;top: 50%;margin-top: -0.14rem;left: 50%;margin-left: -0.14rem;background-color: #333;-webkit-backface-visibility: hidden;}
+/* keybord */
+
+
+.fmu-keyboard {position: fixed;width: 100%;left: 0;bottom: 0;height: 4.35rem;background-color: #fff;text-align: center;line-height: 1;z-index: 9;-webkit-transform: translate3d(0,100%,0);transform: translate3d(0,100%,0);-webkit-transition: -webkit-transform 0.3s ease;transition: transform 0.3s ease;}
+.fmu-keyboard.active{-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+.fmu-keyboard li {width: 33.3%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;height: 25%;border-bottom: 1px solid #e6e6e6;border-right: 1px solid #e6e6e6;float: left;}
+.fmu-keyboard li.on{background-color: #e6e6e6;}
+.fmu-keyboard li span:first-child {margin-top: 0.24rem;}
+.fmu-keyboard li span {display: block;font-size: 0.5rem;}
+.fmu-keyboard li span.fmu-keyboard-letter {font-size: 0.22rem;}
+.fmu-keyboard-gray { background-color: #e6e6e6;}
+.fmu-keyboard li.fmu-keyboard-gray.on{background-color: #fff;}
+.fmu-keyboard li.fmu-keyboard-gray span.fmu-keyboard-letter{margin-top: 0.36rem;font-size: 0.36rem;}
+.fmu-keyboard li .fmu-keyboard-del {width: 0.5rem;display: block;margin: 0.36rem auto;text-align: center;}
+
+/* fl-hairlines */
+.fl-hairlines .fmu-keybord-input li,
+.fl-hairlines .fmu-keyboard li{border-width: 0.6px;}

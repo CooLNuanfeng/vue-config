@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navigator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<link rel="stylesheet" href="//static2.51fanli.net/webapp/css/base.css" />
+<link rel="stylesheet" href="//static2.51fanli.net/common/libs/fmu/css/navigator.css" />
+
+<style>
+    .description{margin:10px 0;}
+    .description p{font-size:24px; text-align:center; color:#000;}
+    .color{height:800px;}
+</style>
+
+<script src="//static2.51fanli.net/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+<script src="//static2.51fanli.net/common/libs/fmu/js/vendors/iscroll/iscroll-lite-v5.js"></script>
+<script src="//static2.51fanli.net/common/libs/fmu/js/core/fmu.js"></script>
+<script src="//static2.51fanli.net/common/libs/fmu/js/plugins/scrollspy.js"></script>
+<script src="//static2.51fanli.net/common/libs/fmu/js/plugins/navigator.js"></script>
+
+</head>
+
+<body>
+
+    <div class="fmu-navigator-box">
+        <div id="J_fmu_navigator_wrapper" class="fmu-navigator-wrapper">
+            <nav id="J_fmu_navigator_scroller" class="fmu-navigator-scroller">
+                <ul>
+                    <li class="cur"><a href="javascript:void(0);">导航块0</a></li>
+                    <li><a href="javascript:void(0);">导航块1</a></li>
+                    <li><a href="javascript:void(0);">导航块2</a></li>
+                    <li><a href="javascript:void(0);">导航块3</a></li>
+                    <li><a href="javascript:void(0);">导航块4</a></li>
+                    <li><a href="javascript:void(0);">导航块5</a></li>
+                    <li><a href="javascript:void(0);">导航块6</a></li>
+                    <li><a href="javascript:void(0);">导航块7</a></li>
+                    <li><a href="javascript:void(0);">导航块8</a></li>
+                    <li><a href="javascript:void(0);">导航块9</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="J_fmu_navigator_more" class="fmu-navigator-more gt">更多</div>
+        <div id="J_fmu_navigator_panel" class="fmu-navigator-panel">
+            <ul>
+                <li><a href="javascript:void(0);">导航块0</a></li>
+                <li><a href="javascript:void(0);">导航块1</a></li>
+                <li><a href="javascript:void(0);">导航块2</a></li>
+                <li><a href="javascript:void(0);">导航块3</a></li>
+                <li><a href="javascript:void(0);">导航块4</a></li>
+                <li><a href="javascript:void(0);">导航块5</a></li>
+                <li><a href="javascript:void(0);">导航块6</a></li>
+                <li><a href="javascript:void(0);">导航块7</a></li>
+                <li><a href="javascript:void(0);">导航块8</a></li>
+                <li><a href="javascript:void(0);">导航块9</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section style="height:40px;"></section>
+
+    <div>
+        <div class="color J_color">
+            <h2>内容0</h2>
+        </div>
+        <div class="color J_color" id="a2">
+            <h2>内容1</h2>
+            <p><a href="#a1">a1</a></p>
+        </div>
+        <div class="color J_color" id="a3">
+            <h2>内容2</h2>
+        </div>
+        <div class="color J_color">
+            <h2>内容3</h2>
+        </div>
+        <div class="color J_color">
+            <h2>内容4</h2>
+        </div>
+        <div class="color" id="a1">
+            <h2>混在内容列表中的内容，不需要对应导航。外框不需添加J_color</h2>
+            <p><a href="#a2">a2</a></p>
+            <p><a href="#a3">a3</a></p>
+        </div>
+        <div class="color J_color">
+            <h2>内容5</h2>
+        </div>
+        <div class="color J_color">
+            <h2>内容6</h2>
+        </div>
+        <div class="color J_color">
+            <h2>内容7</h2>
+        </div>
+        <div class="color J_color">
+            <h2>内容8</h2>
+        </div>
+        <div class="color J_color">
+            <h2>内容9</h2>
+            <a id="J_go_top" href="javascript:void(0);">go top</a>
+        </div>
+        <div class="color">
+            <h2>混在内容列表中的内容，不需要对应导航。外框不需添加J_color</h2>
+        </div>
+    </div>
+
+    <script>
+        $.navigator({
+            //页面滑动时是否需要选中导航（默认值为：false）
+            trackway: true,
+            //是否需要下拉导航（默认值为：false）
+            dropDown: true,
+            //点击导航，是否需要滚动到当前导航位置且高亮显示（默认值为：true）
+            navScroll: true,
+            //导航滑动前触发此事件，页面滑动不会触发
+            beforeScrollStart: function () {
+                console.log("beforeScrollStart");
+            },
+            //导航滑动时触发此事件，页面滑动不会触发
+            scrollStart: function () {
+                console.log("scrollStart");
+            },
+            //导航滑动结束后触发此事件，页面滑动不会触发
+            scrollEnd: function () {
+                console.log("scrollEnd");
+            },
+            //导航选择的className（默认值为：cur）
+            currentClass: "cur"
+        });
+
+        $("#J_go_top").on("click", function () {
+            window.scrollTo(0, 0);
+        });
+
+        // 新增锚点定位
+        // 访问这个网址试试：http://static2.51fanli.net/common/libs/fmu/demo/plugins/navigator.html#a1
+        // 访问这个网址试试：http://static2.51fanli.net/common/libs/fmu/demo/plugins/navigator.html#a2
+    </script>
+</body>
+</html>

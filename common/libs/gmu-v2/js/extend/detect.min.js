@@ -1,0 +1,1 @@
+(function(e,a){var d=a.userAgent,c=e.browser,f={qq:/MQQBrowser\/([\d.]+)/i,uc:/UCBrowser\/([\d.]+)/i,baidu:/baidubrowser\/.*?([\d.]+)/i},b;e.each(f,function(g,h){if((b=d.match(h))){c[g]=true;c.version=b[1];return false}});if(!c.uc&&/Uc/i.test(a.appVersion)){c.uc=true}})(Zepto,navigator);

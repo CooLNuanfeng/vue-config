@@ -1,0 +1,19 @@
+/*
+ * jQuery easyselect plugin 0.1 
+ * author:Hao Chen 
+ *
+ */
+.ui-select{position:relative; z-index:1; display:inline-block; *display:inline; zoom:1; width:200px; height:22px; border:1px solid #EBEBEB; background:#FFF; font:12px/22px Helvetica,Arial,'SimSun',sans-serif; color:#666;outline:none;}
+.ui-select-title{display:block; text-decoration:none; padding:0 5px; white-space:nowrap; overflow:hidden; outline:none; cursor:default;}
+.ui-select-arrow{position:absolute; right:0; top:0; width:20px; height:22px; background:#FFF; overflow:hidden; outline:none; cursor:default;}
+.ui-select-selected{border-color:#8B3;}
+.ui-select-selected .ui-select-arrow{border-left:1px solid #EBEBEB; background:CCC;}
+.ui-select-arrow i{display:block; overflow:hidden; width:0; height:0; margin:10px auto 0; border-width:4px; border-style:solid; border-color:#666 transparent transparent; _border-color:#666 #fff #fff;_filter:chroma(color=#ffffff); font-size:0; line-height:0; pointer-events:none; cursor:pointer;}
+.ui-select-options{display:none; position:absolute; top:22px; left:-1px; z-index:2; margin:0; padding:0; min-width:200px; *width:200px; max-height:300px; border:1px solid #8B3; background:#FFF; overflow-y:auto; overflow-x:hidden;}
+.ui-select-options li{display:block;height:22px; padding:0 5px; list-style:none; line-height:22px; white-space:nowrap; *zoom:1;}
+.ui-select-options li.ui-option-disabled{border-color:#E8E8E8; color:#BCBCBC;}
+.ui-select-options .selected{background:#8B3; color:#FFF; cursor:default;}
+
+.ui-select-disabled{border-color:#E8E8E8; background:#F0F0F0; color:#BCBCBC;}
+.ui-select-disabled .ui-select-arrow{background:#F0F0F0;}
+.ui-select-disabled .ui-select-arrow i{border-top-color:#BCBCBC;}

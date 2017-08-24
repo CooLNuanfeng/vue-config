@@ -1,0 +1,17 @@
+/* sidebar contact us */
+/*
+<div class="qq-feedback">
+	<a href="javascript:void(0);" class="qq-feedback-btn">在线反馈</a>
+    <ul class="qq-feedback-box">
+		<li class="six">对活动有疑问？请找我！</li>
+		<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2337257528&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2337257528:41" alt="QQ交谈" /></a></li>
+		<li class="nine">（每天9:00-18:00）</li>
+	</ul>
+</div>
+*/
+
+.qq-feedback{position:absolute; left:975px; top:0; width:22px; height:98px;}
+.qq-feedback-btn{display:block; width:22px; height:98px; background:url(../../images/qq/bg-qq.png) no-repeat; text-indent:-9999px; overflow:hidden;}
+.qq-feedback-btn:hover{background-position:-23px 0;}
+.qq-feedback-box{position:absolute; top:0; left:22px; display:none; width:130px; height:76px; overflow:hidden; border:1px solid #E1E1E1; border-left:none; padding:10px 5px 10px 10px; background:#FAFAFA;}
+.qq-feedback-box li{height:28px; line-height:28px; overflow:hidden;}

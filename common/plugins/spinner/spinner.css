@@ -1,0 +1,12 @@
+/*spinner need include js
+"//common/plugins/spinner/jquery.spinner.js"
+*/
+.wrap-spinner{width: 16px;height:36px;display:inline-block;}
+.spinner {float:left;display: block;width: 16px;height: 15px;background: url(spinner.png) no-repeat;text-indent: -9999px;overflow: hidden;}
+.spinner-add {margin-bottom: 2px;background-position: 0 0;}
+.spinner-add:hover {background-position: -18px 0;}
+.spinner-down {background-position: 0 -17px;}
+.spinner-down:hover {background-position: -18px -17px;}
+
+
+

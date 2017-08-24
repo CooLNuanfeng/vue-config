@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Code</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/form.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/dialog.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/webapp/js/base.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/toast.js"></script>
+    <script src="/common/libs/fmu/js/widget/dialog.js"></script>
+    <script src="/common/libs/fmu/js/plugins/countdownbutton.js"></script>
+    <script src="/common/libs/fmu/js/fanli/verifycode.js"></script>
+
+</head>
+
+<body>
+    <section class="description">
+        <p>Verify Code</p>
+    </section>
+
+    <!--当未绑定手机号码，需要用户输入手机号以后再发送 START-->
+    <div class="fui-form">
+        <h3 class="fui-form-text">请输入您要绑定的新手机号</h3>
+        <div class="fui-form-row">
+            <div class="fui-form-item">
+                <input id="J_phone_num" name="mobile" type="tel" maxlength="11" class="fui-input"  placeholder="11位大陆手机号码">
+            </div>
+            <div class="fui-form-item fui-form-vcode">
+                <input type="tel" id="J_code" maxlength="6" class="fui-input" name="code" placeholder="验证码">
+                <input id="J_get_code" type="button" value="获取验证码" class="fui-vcode-btn fui-vcode-disabled-btn" disabled>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var alertDialog, alertContent;
+            alertDialog = new FMU.UI.Dialog();
+            alertDialog.render = "alert";
+            alertDialog.setup();
+            alertContent = alertDialog.getContent();
+
+            function showDialog(content) {
+                alertContent.html(content);
+                alertDialog.load();
+            }
+
+            Fanli.VerifyCode.send({
+                $trigger: $("#J_get_code"),
+                pos: 601,
+                activeModel:true,
+                $dest: $("#J_phone_num"),
+                onSendError: function (err) {
+                    showDialog(err);
+                },
+                sendCondition: function () {
+                    var phoneNum = $.trim($("#J_phone_num").val());
+
+                    if (!phoneNum) {
+                        showDialog("请输入手机号");
+                        return false;
+                    }
+
+                    if (!InputValidation.isPhone(phoneNum)) {
+                        showDialog("请输入正确手机号");
+                        return false;
+                    }
+                    return true;
+                }
+            });
+        }());
+    </script>
+    <!--当未绑定手机号码，需要用户输入手机号以后再发送 END-->
+
+    <!--已经绑定手机，点击直接发送 START-->
+    <div class="fui-form">
+        <h3 class="fui-form-text">已绑定手机：134*****247</h3>
+        <div class="fui-form-row fui-form-vcode">
+            <input type="tel" name="code" maxlength="6" class="fui-input" placeholder="验证码">
+            <input id="J_get_code2" type="button" value="获取验证码" class="fui-vcode-btn">
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var alertDialog, alertContent;
+            alertDialog = new FMU.UI.Dialog();
+            alertDialog.render = "alert";
+            alertDialog.setup();
+            alertContent = alertDialog.getContent();
+
+            function showDialog(content) {
+                alertContent.html(content);
+                alertDialog.load();
+            }
+
+            Fanli.VerifyCode.send({
+                $trigger: $("#J_get_code2"),
+                pos: 601,
+                onSendError: function (err) {
+                    showDialog(err);
+                }
+            });
+        }());
+    </script>
+    <!--已经绑定手机，点击直接发送 END-->
+
+</body>
+</html>

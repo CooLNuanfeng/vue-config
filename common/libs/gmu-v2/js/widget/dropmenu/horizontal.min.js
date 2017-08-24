@@ -1,0 +1,1 @@
+(function(a){a.Dropmenu.options.horizontal=true;a.Dropmenu.option("horizontal",true,function(){var b=this;b.on("done.dom",function(d,c){c.addClass("ui-horizontal")})})})(gmu,gmu.$);

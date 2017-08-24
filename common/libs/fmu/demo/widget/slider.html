@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slider</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/slider.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align:center; color: #000; }
+
+        .fmu-slider-item { height: 200px; background: #f60; font-size:100px; text-align:center; line-height: 200px; color: #fff;}
+        .demo{ margin: 20px 0 50px; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/slider.js"></script>
+    <script src="/common/libs/fmu/js/widget/slider.invoke.js"></script>
+
+</head>
+
+<body>
+    <section class="description">
+        <p>Slider</p>
+    </section>
+    <section class="demo">
+        <div class="fmu-slider">
+            <div class="fmu-slider-box" id="J_fmu_slider_container1">
+                <div class="fmu-slider-container">
+                    <div class="fmu-slider-item J_fmu_slider_item">1</div>
+                    <div class="fmu-slider-item J_fmu_slider_item">2</div>
+                    <div class="fmu-slider-item J_fmu_slider_item">3</div>
+                    <div class="fmu-slider-item J_fmu_slider_item">4</div>
+                    <div class="fmu-slider-item J_fmu_slider_item">5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo">
+        <div class="fmu-slider">
+            <div class="fmu-slider-box" id="J_fmu_slider_container2">
+                <div class="fmu-slider-container">
+                    <div class="fmu-slider-item J_fmu_slider_item">
+                        <img class="w100" src="http://static2.51fanli.net/common/images/loading/spacer.png" data-original="http://static2.51fanli.net/common/images/avatar/biaoqing1.jpg">
+                    </div>
+                    <div class="fmu-slider-item J_fmu_slider_item">
+                        <img class="w100" src="http://static2.51fanli.net/common/images/loading/spacer.png" data-original="http://static2.51fanli.net/common/images/avatar/biaoqing2.jpg">
+                    </div>
+                    <div class="fmu-slider-item J_fmu_slider_item">
+                        <img class="w100" src="http://static2.51fanli.net/common/images/loading/spacer.png" data-original="http://static2.51fanli.net/common/images/avatar/biaoqing3.jpg">
+                    </div>
+                    <div class="fmu-slider-item J_fmu_slider_item">
+                        <img class="w100" src="http://static2.51fanli.net/common/images/loading/spacer.png" data-original="http://static2.51fanli.net/common/images/avatar/biaoqing4.jpg">
+                    </div>
+                    <div class="fmu-slider-item J_fmu_slider_item">
+                        <img class="w100" src="http://static2.51fanli.net/common/images/loading/spacer.png" data-original="http://static2.51fanli.net/common/images/avatar/biaoqing5.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var slider = new FMU.UI.Slider($("#J_fmu_slider_container1")[0], {
+            auto: 3000,
+            continuous: true,
+            showDot: true,
+            callback: function (index, element) {
+                // console.log(index);
+            }
+        });
+
+        FMU.UI.sliderInvoke($("#J_fmu_slider_container2")[0], {
+            auto: 3000,
+            continuous: true,
+            showDot: true,
+            imgLazyLoad: true, //默认即为true
+            callback: function (index, element) {
+                // console.log(index);
+            }
+        })
+    </script>
+</body>
+</html>

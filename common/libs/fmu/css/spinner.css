@@ -1,0 +1,25 @@
+/*前缀fmu, spinner为spinner首字母, class为自定义*/
+.fmu-spinner .subtract-icon { position: relative; display: inline-block; width: 27px; height: 27px; border: 1px solid #ccc; background-color: #FDFDFD; vertical-align: middle; -webkit-tap-highlight-color: rgba(0,0,0, 0.4); }
+.fmu-spinner .subtract-icon:before { position: absolute; top: 13px; left: 8px; width: 12px; height: 0; border-top: 2px solid #666; content: ""; }
+
+.fmu-spinner .plus-icon { position: relative; display: inline-block; width: 27px; height: 27px; border: 1px solid #ccc; background-color: #FDFDFD; vertical-align: middle; -webkit-tap-highlight-color: rgba(0,0,0, 0.4); }
+.fmu-spinner .plus-icon:before { position: absolute; top: 13px; left: 8px; width: 12px; height: 0; border-top: 2px solid #666; content: " "; }
+.fmu-spinner .plus-icon:after { position: absolute; top: 8px; left: 13px; width: 0px; height: 12px; border-left: 2px solid #666; content: " "; }
+
+.fmu-spinner .number { display: inline-block; width: 55px; height: 27px; margin: 0 7px; border: 1px solid #ccc; color: #000; -webkit-appearance: none; border-radius: 0; padding: 0; vertical-align: middle; text-align: center; background-color:#fff;}
+
+.fmu-spinner .disable:before,.fmu-spinner .disable:after{border-color: #d5d5d5;}
+
+.fmu-spinner .limit-buyone { display: inline-block; height: 27px; margin-left:10px; line-height: 27px; font-size: 10px; color: #f00;}
+
+.fmu-spinner-variantone .fmu-spinner .subtract-icon { width: 20px; height:20px; }
+.fmu-spinner-variantone .fmu-spinner .subtract-icon:before { top: 9px; left:4px;}
+.fmu-spinner-variantone .fmu-spinner .number { width:45px; height: 20px;}
+.fmu-spinner-variantone .fmu-spinner .plus-icon  { width: 20px; height:20px; }
+.fmu-spinner-variantone .fmu-spinner .plus-icon:before {top: 9px; left:4px; }
+.fmu-spinner-variantone .fmu-spinner .plus-icon:after { top: 4px; left: 9px;}
+
+
+/* fl-hairlines */
+.fl-hairlines .fmu-spinner .subtract-icon, .fl-hairlines .fmu-spinner .plus-icon, .fl-hairlines .fmu-spinner .number{border-width:0.5px;}
+.fl-hairlines .fmu-spinner .subtract-icon:before, .fl-hairlines .fmu-spinner .plus-icon:before, .fl-hairlines .fmu-spinner .plus-icon:after{border-width:1px;}

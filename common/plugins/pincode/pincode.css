@@ -1,0 +1,22 @@
+.pincode {position:relative; display:inline-block; *display:inline; *zoom:1; height:28px; border:1px solid #dbdbdb; border-right:0; overflow:hidden;}
+.pincode-item {position:relative; float:left; display:block; height:28px; width:28px; border-right:1px solid #dbdbdb; outline:none; font-size:14px; text-align:center; line-height:28px; vertical-align:top; cursor:text;}
+.pincode-input {position:absolute; top:0; left:0; display:block; height:28px; width:28px; line-height:28px; border:none; outline:none; text-align:center; background:transparent;}
+.pincode-circle:after {content:""; width:8px; height:8px; background-color:#000; border-radius:50%; position:absolute; top:50%; left:50%; margin:-4px 0 0 -4px; background:url("/common/plugins/pincode/circle.png") no-repeat center center \9;}
+.pincode-circle {*background:url("/common/plugins/pincode/circle.png") no-repeat center center;}
+
+.paypassword-verify-dl-container {position:relative; width:260px; height:230px; padding:45px 100px; background:#fff; border-radius:3px; text-align: center; overflow:hidden;}
+.paypassword-verify-dl-container .dialog-close {position:absolute; top:0; right:0; width:34px; height:34px; line-height:34px; text-align:center; font-size:24px; color:#666; font-family:SimSun; background:none; z-index:1;}
+.paypassword-verify-dl .verify-head {height:75px; line-height:30px; color:#000; text-align:center;}
+.paypassword-verify-dl .verify-head h5 {font-size:20px; color:#000;}
+.paypassword-verify-dl .verify-head .err {color:#ff5656;}
+.paypassword-verify-dl .verify-head .sub {font-size:12px;}
+.paypassword-verify-dl .verify-head em {font-style:normal; color:#ff5656;}
+
+.paypassword-verify-dl .pincode {height:38px;}
+.paypassword-verify-dl .pincode-item {width:38px; height:38px; line-height:38px;}
+
+.paypassword-verify-dl .forget {float:right; margin:8px 15px 0 0; font-size:12px; color:#060; text-decoration:underline;}
+.paypassword-verify-dl .verify-btns {margin-top:58px; text-align:center;}
+
+.paypassword-verify-dl-container .verify-succ {display:none; width:258px; height:200px; padding-top:33px; background:#fff; text-align:center; font-size:18px; font-weight:600;}
+.paypassword-verify-dl-container .succ-img {width:100%; margin-bottom:20px;}

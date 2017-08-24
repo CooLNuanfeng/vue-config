@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cleanup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/cleanup.css" />
+
+    <style>
+        .description { margin-bottom: 10px; }
+        .description h2 { margin: 10px 0; text-align:center; font-size: 24px; }
+        .cleanup { display:block; width:90%; height: 45px; margin: 0 auto; border:1px solid #999; box-sizing:border-box;}
+        .demo { margin-bottom: 20px;}
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/plugins/cleanup.js"></script>
+
+</head>
+
+<body>
+    <section class="description">
+        <h2>Cleanup</h2>
+    </section>
+    <section class="demo">
+        <input type="text" class="cleanup" id="J_cleanup_hasvalue"  value="has value"/>
+    </section>
+
+    <section class="demo">
+        <input type="text" class="cleanup" id="J_cleanup"  value=""/>
+    </section>
+
+    <script>
+        $("#J_cleanup").cleanup();
+
+        $("#J_cleanup_hasvalue").cleanup();
+        
+    </script>
+</body>
+</html>

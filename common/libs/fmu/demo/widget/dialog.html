@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dialog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/button.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/form.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/dialog.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+
+        .demo { padding: 10px; margin: 20px 0; background: #fff; border:1px solid #999;}
+        .item { height: 25px; margin-bottom: 10px; line-height: 25px;}
+        .lbl { float:left; vertical-align: middle;}
+        .ck { float:left; height: 20px; width: 20px; border:1px solid #999; vertical-align: middle; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/webapp/js/base.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/dialog.js"></script>
+
+</head>
+
+<body>
+    <div class="description">
+        <p>Dialog</p>
+        <!--
+        <p class="intro">
+            <br />
+            <strong>详细说明: </strong>
+            <br />
+            class='J_fmu_dl_close' 设置此class关闭弹层<br />
+            class='J_fmu_dl_step' 如果弹层是多步骤的，设置此class为每一个step的class<br />
+            class='J_fmu_dl_gonext' data-gonext="2" 设置此class用于step间跳转，data-gonext用于控制跳到哪个step（计数从1开始）
+        </p>
+        -->
+    </div>
+    <section class="demo">
+        <article class="item">
+            <label>弹层位置：</label>
+            <select class="right" id="J_fmu_position">
+                <option value="center">中</option>
+                <option value="top">上</option>
+                <option value="bottom">下</option>
+            </select>
+        </article>
+
+        <article class="item">
+            <label class="lbl">开启动画：</label>
+            <input class="ck" type="checkbox" name="" id="J_fmu_animation" value="动画效果">
+        </article>
+
+        <article>
+            <button class="fui-btn fui-btn-rect fui-btn-s fui-btn-green" id="J_fmu_dl_trigger">弹出</button>
+        </article>
+
+        <section class="fmu-dl-wrap" id="J_fmu_dl">
+            <!-- 登陆提示1 -->
+            <article class="J_fmu_dl_step">
+                <div class="fmu-dl-title">
+                    <h3>登陆提示1</h3>
+                    <a href="javascript:void(0);" class="fmu-dl-close J_fmu_dl_close">&times;</a>
+                </div>
+                <div class="fmu-dl-content">
+                    <p>请使用返利网账号登录后, 获得更多个性化特色功能，<a href="javascript:void(0);" class="J_fmu_dl_close">关闭弹层</a></p>
+                </div>
+                <div class="fmu-dl-btns">
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-white J_fmu_dl_close">取消</a>
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-green J_fmu_dl_gonext" data-gonext="2">下一步</a>
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-green J_fmu_dl_gonext" data-gonext="3">第三步</a>
+                </div>
+            </article>
+            <!-- 登陆提示2 -->
+            <article class="J_fmu_dl_step" style="display: none">
+                <div class="fmu-dl-title">
+                    <h3>登陆提示2</h3>
+                    <a href="javascript:void(0);" class="fmu-dl-close J_fmu_dl_close">&times;</a>
+                </div>
+                <div class="fmu-dl-content">
+                    <p>请使用返利网账号登录后, 获得更多个性化特色功能，请使用返利网账号登录后, 获得更多个性化特色功能，请使用返利网账号登录后, 获得更多个性化特色功能，请使用返利网账号登录后, 获得更多个性化特色功能，请使用返利网账号登录后, 获得更多个性化特色功能，请使用返利网账号登录后, 获得更多个性化特色功能</p>
+                </div>
+                <div class="fmu-dl-btns">
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-white J_fmu_dl_close">取消</a>
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-green J_fmu_dl_gonext" data-gonext="3">下一步</a>
+                </div>
+            </article>
+            <!-- 登陆提示3 -->
+            <article class="J_fmu_dl_step" style="display: none">
+                <div class="fmu-dl-title">
+                    <h3>登陆提示3</h3>
+                    <a href="javascript:void(0);" class="fmu-dl-close J_fmu_dl_close">&times;</a>
+                </div>
+                <div class="fmu-dl-content">
+                    <p>请使用返利网账号登录后, 获得更多个性化特色功能，<a href="javascript:void(0);" class="J_fmu_dl_close">关闭弹层</a></p>
+                </div>
+                <div class="fmu-dl-btns">
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-green J_fmu_dl_gonext" data-gonext="1">第一步</a>
+                    <a class="fmu-dl-btn fui-btn fui-btn-rect fui-btn-green J_fmu_dl_close">确定</a>
+                </div>
+            </article>
+        </section>
+    </section>
+
+    <section class="demo">
+        <article class="item">
+            <label>模拟alert：</label>
+            <button id="J_alert" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">Alert</button>
+        </article>
+
+        <article class="item">
+            <label>模拟confirm：</label>
+            <button id="J_confirm" class="fui-btn fui-btn-s fui-btn-rect fui-btn-green">Confirm</button>
+        </article>
+
+    </section>
+
+    <script>
+
+        var $position = $('#J_fmu_position');
+        var $animation = $('#J_fmu_animation');
+
+        var diaI = new FMU.UI.Dialog()
+        diaI.$dialog = $('#J_fmu_dl');
+        diaI.position = $position.val();
+        diaI.animation = $animation.is(':checked');
+        diaI.onBeforeLoad = function (e) {
+            console.log(e.type);
+        };
+
+        diaI.onLoad = function (e) {
+            console.log(e.type);
+        };
+
+        diaI.onBeforeClose = function (e) {
+            console.log(e.type);
+        };
+
+        diaI.onClose = function (e) {
+            console.log(e.type);
+        };
+        diaI.setup();
+
+        $position.change(function () {
+            diaI.position = $position.val();
+        });
+
+        $animation.click(function () {
+            diaI.animation = $animation.is(':checked');
+        });
+
+        $('#J_fmu_dl_trigger').click(function () {
+            //打开dialog
+            diaI.load();
+        });
+
+        // alert
+        var diaAlert = new FMU.UI.Dialog()
+        diaAlert.render = "alert";
+        diaAlert.setup();
+        diaAlert.getContent().html("已经成功操作").css("text-align", "center");
+        $("#J_alert").on("click", function () {
+            diaAlert.load();
+        });
+
+        // confirm
+        var diaConfirm = new FMU.UI.Dialog()
+        diaConfirm.render = "confirm";
+        diaConfirm.confirmHandler = function () {
+            console.log("confirm handler");
+        };
+        diaConfirm.setup();
+        diaConfirm.getContent().html("您确认要删除该商品吗?").css("text-align", "center");
+        $("#J_confirm").on("click", function () {
+            diaConfirm.load();
+        });
+
+    </script>
+
+</body>
+</html>

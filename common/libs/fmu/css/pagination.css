@@ -1,0 +1,5 @@
+.fmu-pagination { font-size: 14px; text-align: center; }
+.fmu-pagination-anchor { display: inline-block; width: 59px; margin: 0 5px; border: 1px solid #ccc; border-radius: 2px; color: #000; line-height: 29px; outline: 0; }
+.fmu-page-first, .fmu-page-end { width: 42px; margin: 0; }
+.fmu-page-gray { background-color: #fdfdfd; color: #b4b4b4; }
+.fmu-pagination-select { height: 29px; line-height: 29px; border-radius: 2px; outline: 0; }

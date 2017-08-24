@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 55px;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="//static2.51fanli.net/webapp/css/base.css">
+    <link rel="stylesheet" type="text/css" href="//static2.51fanli.net/common/libs/fmu/css/iosselector.css">
+    <style type="text/css">
+        button{
+            display: block;
+            margin:1rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="J_select_address">选择地址</button>
+    <button id="J_select_date">选择日期</button>
+    <button id="J_select_gender">选择性别</button>
+</body>
+<script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+<script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+<script type="text/javascript" src="address-data.js"></script>
+<script type="text/javascript" src="//static2.51fanli.net/common/libs/fmu/js/vendors/iscroll/iscroll-probe-v5.2.0.js"></script>
+<script type="text/javascript" src="//static2.51fanli.net/common/libs/fmu/js/widget/iosselector.js"></script>
+<script type="text/javascript">
+// 选择地址 address来自address-data.js
+    var mySelector = new FMU.UI.IosSelector();
+    mySelector.column = 3;
+    mySelector.data = address;
+    mySelector.el = "#J_select_address";
+    mySelector.default = ["737-上海","738-上海市","740-闵行区-200000-021"],
+    mySelector.callback = function (id,text,key) {
+        console.log(id,text,key);
+    };
+    mySelector.setUp();
+
+// 选择日期
+
+/* 生成日期数据 */
+/* year为向上取 整10年 */
+    var year = Math.floor(new Date().getFullYear() % 100 / 10 + 1) * 10 + Math.floor(new Date().getFullYear() / 100) * 100;
+
+    var time = {};
+    for (var i = 1900; i <= year; i++){
+        time[i + "年"] = {};
+        for(var j = 1; j <= 12; j++){
+            time[i + "年"][j + "月"] = [];
+            for(var k =1; k <= 28; k++){
+                time[i + "年"][j + "月"].push(k + "日");
+            }
+            if(j === 2){
+                if((i % 4 === 0 && i % 100 !== 0) || i % 400 === 0){
+                    time[i + "年"][j + "月"].push("29日");
+                }
+            }else if([4,6,9,11].indexOf(j) > -1){
+                time[i + "年"][j + "月"].push("29日","30日");
+            }else{
+                time[i + "年"][j + "月"].push("29日","30日","31日");
+            }
+        }
+    }
+
+/*new 选择框*/
+    var mySelector = new FMU.UI.IosSelector();
+    mySelector.column = 3;
+    mySelector.data = time;
+    mySelector.el = "#J_select_date";
+    mySelector.title = "选择日期";
+    mySelector.default = ["1990年","1月","1日"];
+    mySelector.callback = function (id,text,key) {
+        console.log(id.join(""));
+    };
+    mySelector.setUp();
+
+
+/*性别选择*/
+
+    var gender = ["男", "女", "其他"];
+     
+    var genderSelect = new FMU.UI.IosSelector();
+    genderSelect.column = 1;
+    genderSelect.data = gender;
+    genderSelect.el = "#J_select_gender";
+    genderSelect.title = "选择性别";
+    genderSelect.default = ["男"];
+    genderSelect.callback = function(id) {
+        console.log(id);
+    };
+    genderSelect.setUp();
+</script>
+</html>

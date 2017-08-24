@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Css3 ScrollText</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/css3scrolltext.css" />
+
+    <style>
+        .description { margin-bottom: 10px; }
+        .description h2 { margin: 10px 0; text-align: center; font-size: 24px; }
+        .cleanup { display: block; width: 90%; height: 45px; margin: 0 auto; border: 1px solid #999; box-sizing: border-box; }
+        .demo { margin-bottom: 20px; }
+        .fmu-css3scrolltext-wrap { border:1px solid #f60;}
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/plugins/css3scrolltext.js"></script>
+
+</head>
+
+<body>
+    <section class="description">
+        <h2>Css3 ScrollText</h2>
+    </section>
+
+
+    <div class="fmu-horizontal-scroll-wrap">
+        <ul id="J_horizontal_list" class="clearfix">
+            <li>免单会员1-123</li>
+            <li>免单会员2-34567</li>
+            <li>免单会员3-123569874</li>
+            <li>免单会员4-12356874</li>
+            <li>免单会员5-asdfadsfadsf</li>
+        </ul>
+    </div>
+
+
+    <section class="demo">
+        <div class="fmu-css3scrolltext-wrap">
+            <ul id="J_list_box">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        $("#J_list_box").css3ScrollText();
+
+        $("#J_horizontal_list").css3ScrollText({
+            direction: "horizontal"
+        });
+    </script>
+</body>
+</html>

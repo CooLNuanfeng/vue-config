@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switcher</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+    <link rel="stylesheet" href="/common/libs/fmu/css/switcher.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align:center; color: #000; }
+        .demo { padding: 30px; background: #FFF; }
+        .demo p { display: block; padding-bottom: 20px; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/core/fmu.js"></script>
+    <script src="/common/libs/fmu/js/core/widget.js"></script>
+    <script src="/common/libs/fmu/js/widget/switcher.js"></script>
+
+</head>
+
+<body>
+
+    <section class="description">
+        <p>Switcher</p>
+    </section>
+    <section class="demo">
+
+        <p>我是1和2的总开关：<input class="J_switcher0" type="checkbox" name="fmu0" /></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;我是1开关：<input class="J_switcher1" value="100" type="checkbox" name="fmu1" checked="checked" /></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;我是2开关：<input class="J_switcher2" type="checkbox" name="fmu2" /></p>
+
+        <p>我是3开关：<input class="J_switcher3" type="checkbox" name="fmu3" /></p>
+
+        <p>我是5和6的总开关：<input class="J_switcher4" type="checkbox" name="fmu4" /></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;我是5开关：<input class="J_switcher5" value="400" type="checkbox" name="fmu5" checked="checked" /></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;我是6开关：<input class="J_switcher6" type="checkbox" name="fmu6" /></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我是6的子开关601：<input class="J_switcher601" type="checkbox" name="fmu601" /></p>
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我是6的子开关602：<input class="J_switcher602" type="checkbox" name="fmu601" /></p>
+
+    </section>
+    <script>
+        var swi0 = new FMU.UI.Switcher();
+        swi0.$checkboxEle = $(".J_switcher0");
+        swi0.setup();
+
+        var swi1 = new FMU.UI.Switcher();
+        swi1.$checkboxEle = $(".J_switcher1");
+        swi1.parent = swi0;
+        swi1.addToParent();
+        swi1.onCallback = function (ev) {
+            console.log("1打开了；值：{0}".format(this.$checkboxEle.val()));
+        };
+        swi1.offCallback = function (ev) {
+            console.log("1关闭了；值：{0}".format(this.$checkboxEle.val()));
+        };
+        swi1.setup();
+        
+        var swi2 = new FMU.UI.Switcher();
+        swi2.$checkboxEle = $(".J_switcher2");
+        swi2.parent = swi0;
+        swi2.addToParent();
+        swi2.setup();
+        swi2._checkedParent();
+
+        var swi3 = new FMU.UI.Switcher();
+        swi3.$checkboxEle = $(".J_switcher3");
+        swi3.setup();
+
+        var swi4 = new FMU.UI.Switcher();
+        swi4.$checkboxEle = $(".J_switcher4");
+        swi4.style = "checkbox";
+        swi4.setup();
+
+        var swi5 = new FMU.UI.Switcher();
+        swi5.$checkboxEle = $(".J_switcher5");
+        swi5.style = "checkbox";
+        swi5.parent = swi4;
+        swi5.addToParent();
+        swi5.onCallback = function (ev) {
+            console.log("5打开了；值：{0}".format(this.$checkboxEle.val()));
+        };
+        swi5.offCallback = function (ev) {
+            console.log("5关闭了；值：{0}".format(this.$checkboxEle.val()));
+        };
+        swi5.setup();
+
+        var swi6 = new FMU.UI.Switcher();
+        swi6.$checkboxEle = $(".J_switcher6");
+        swi6.style = "checkbox";
+        swi6.parent = swi4;
+        swi6.addToParent();
+        swi6.setup();
+
+        var swi601 = new FMU.UI.Switcher();
+        swi601.$checkboxEle = $(".J_switcher601");
+        swi601.style = "checkbox";
+        swi601.parent = swi6;
+        swi601.addToParent();
+        swi601.setup();
+
+        var swi602 = new FMU.UI.Switcher();
+        swi602.$checkboxEle = $(".J_switcher602");
+        swi602.style = "checkbox";
+        swi602.parent = swi6;
+        swi602.addToParent();
+        swi602.setup();
+    </script>
+
+</body>
+</html>

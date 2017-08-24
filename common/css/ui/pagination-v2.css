@@ -1,0 +1,33 @@
+/* pagination */
+/*HTML structure:
+<div class="pages">
+	<a href="#" class="prevPage">上一页<s></s></a>
+	<span class="current">1</span><a href="#">2</a>
+	<span>…</span>
+	<a href="#">10</a>
+	<a href="#" class="nextPage">下一页<s></s></a>
+</div>
+*/
+.pages{margin:25px 0; clear:both; text-align:center; font-size:0;}
+.pages a, .pages span{display:inline-block; height:32px; overflow:hidden; *zoom:1; *display:inline; margin:0 1px; padding:0 10px; font:14px/32px Arial; color:#999;}
+.pages a{background-color:#FFF; border:1px solid #E6E6E6;}
+.pages a:hover{background-color:#EFD; color:#F30; text-decoration:underline;}
+.pages .current{border:1px solid #8B3; background-color:#8B3; font-weight:bold; color:#FFF;}
+.pages .prevPage, .pages .nextPage{position:relative; z-index:1; font-weight:bold; font-family:SimSun; _height:29px; _line-height:30px; _padding-top:3px;}
+.pages .prevPage:hover, .pages .nextPage:hover{background-color:#FFF; color:#060; text-decoration:none;}
+.pages .prevPage{margin-right:8px; padding-left:23px;}
+.pages .nextPage{margin-left:8px; padding-right:23px;}
+.pages s{position:absolute; top:11px; z-index:2; width:0; height:0; overflow:hidden; border-width:5px; border-style:dashed solid; font-size:0;}
+.pages .prevPage s{left:5px; border-color:#FFF #999 #FFF #FFF;}
+.pages .nextPage s{right:5px; border-color:#FFF #FFF #FFF #999;}
+.pages .prevPage:hover s, .pages .prevPage:active s{border-color:#FFF #9C9 #FFF #FFF;}
+.pages .nextPage:hover s, .pages .nextPage:active s{border-color:#FFF #FFF #FFF #9C9;}
+
+.pages-s{margin:0; text-align:right;}
+.pages-s a, .pages-s span{padding:3px 8px; height:18px; line-height:18px; font-size:12px;}
+.pages-s .prevPage, .pages-s .nextPage{font-weight:normal; *line-height:16px; _height:15px; _line-height:14px; _padding-top:6px;}
+.pages-s .prevPage{margin-right:4px; padding-left:16px;}
+.pages-s .nextPage{margin-left:4px; padding-right:16px;}
+.pages-s s{top:7px; *top:6px;}
+.pages-s .prevPage s{left:2px;}
+.pages-s .nextPage s{right:2px;}

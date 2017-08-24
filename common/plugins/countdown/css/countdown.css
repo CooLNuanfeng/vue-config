@@ -1,0 +1,4 @@
+/* small */
+.timer-s{position:relative;}
+.timer-s .timer-num{float:left; width:39px; height:24px; margin-right:2px; background:url(../images/bg-1s.png) #FFF no-repeat; font:18px/22px Tahoma, Geneva, sans-serif; text-align:left; color:#FFF; letter-spacing:7px; text-indent:3px;}
+.timer-s .timer-seconds{width:34px;}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vercode Demo</title>
+<link rel="stylesheet" href="http://static2.51fanli.net/common/css/base.css" />
+<link rel="stylesheet" href="http://static2.51fanli.net/common/css/ui/youmi/vercode.css" />
+
+<script src="http://static2.51fanli.net/common/libs/jquery/jquery.min.js"></script>
+<script src="http://static2.51fanli.net/common/js/base.js"></script>
+<script src="http://static2.51fanli.net/common/js/fanli/ui/youmi.js"></script>
+<script src="http://static2.51fanli.net/common/js/fanli/ui/widget.js"></script>
+<script src="http://static2.51fanli.net/common/js/fanli/ui/vercode.js"></script>
+
+</head>
+
+<body>
+
+<div class="container" style="height: 100px; margin-top: 30px; padding: 40px; border:1px solid #000; border-radius: 3px; ">
+
+    <div class="clearfix" id="J_ym_vc_box">
+        <span class="ym-vc-wrap-verify">
+           <input type="text" placeholder="验证码" autocomplete="off" class="J_ym_vc_input ym-vc-input" maxlength="4" />
+           <i class="J_ym_vc_icon_top" style="display: none;"></i>
+         </span>
+         <a class="ym-vc-img J_ym_vc_up" rel="nofollow" href="javascript:void(0);">
+            <img class="J_ym_vc_img" src="http://fun.51fanli.com/verify.png" alt="验证码" />
+         </a>
+        <span class="ym-vc-text J_ym_vc_up">
+            <a class="green" rel="nofollow" href="javascript:void(0);">看不清<br />换一张</a>
+        </span>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var vcInstance = new Youmi.UI.VerCode();
+    vcInstance.setup();
+</script>
+
+</body>
+</html>

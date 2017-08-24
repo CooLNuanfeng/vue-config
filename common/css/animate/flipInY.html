@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>aminate.css flipInY demo</title>
+
+    <link rel="stylesheet" href="/common/css/base.css" />
+    <link rel="stylesheet" href="/common/css/animate/animate.css" />
+    <link rel="stylesheet" href="/webapp/css/ui/grid.css" />
+    <script src="/common/libs/jquery/jquery.min.js"></script>
+    <script src="/common/js/base.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <style>
+        html { overflow: hidden; }
+        .flip-box { margin: 100px 2%; }
+
+        .flip li { width: 32%; height: 150px; margin-right: 2%; border: 1px solid #f60; background-color: gray; box-sizing: border-box; box-shadow: rgba(0,0, 0, 1) 0 0 10px; }
+        .flip li:last-child { margin-right: 0; }
+        .red { background: #f60; }
+
+        .scroll_inner { position: relative; width: 160px; overflow: hidden; height: 20px; }
+        .scroll_inner ul { position: absolute; left: 0; top: 0; width: 2000px; }
+        .scroll_inner li { float: left; width: 40px; border: 1px solid #f60; list-style-type: none; }
+
+        .rewards-list { height: 60px; overflow: hidden; }
+        .rewards-list li { height: 20px; line-height: 20px; }
+
+        @-webkit-keyframes scrollText2 {
+            0% { -webkit-transform: translateY(0px); }
+            /*
+            10% { -webkit-transform: translateY(-20px); }
+            20% { -webkit-transform: translateY(-40px); }
+            30% { -webkit-transform: translateY(-60px); }
+            40% { -webkit-transform: translateY(-80px); }
+            50% { -webkit-transform: translateY(-100px); }
+            60% { -webkit-transform: translateY(-120px); }
+            70% { -webkit-transform: translateY(-140px); }
+            80% { -webkit-transform: translateY(-160px); }
+            90% { -webkit-transform: translateY(-180px); }
+            */
+            100% { -webkit-transform: translateY(-200px); }
+        }
+
+        .rewards-list ul {/* 
+            -webkit-animation: scrollText2 8s infinite cubic-bezier(1,0,0.5,0); 
+            animation: scrollText2 8s infinite cubic-bezier(1,0,0.5,0); 
+            */
+              -webkit-animation-duration: 8s;
+              animation-duration: 8s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+
+              -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+
+              /*
+              -webkit-animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+              animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+              */
+              -webkit-animation-timing-function: linear;
+              animation-timing-function: linear;
+               
+              -webkit-animation-name: scrollText2;
+              animation-name: scrollText2;
+             
+        }
+        
+        .rewards-list:hover { -webkit-animation-play-state: paused; animation-play-state: paused;}
+        
+        /*
+        .rewards-list ul { -webkit-transform: translateY(0px); }
+        */
+    </style>
+
+    <div class="flip-box">
+        <ul class="fui-grid flip" id="J_flip">
+            <li class="fui-span0"></li>
+            <li class="fui-span0"></li>
+            <li class="fui-span0"></li>
+        </ul>
+    </div>
+
+    <div id="J_rewards_list" class="rewards-list">
+        <ul>
+            <li>小***星 刚刚中奖 10元返利1</li>
+            <li>小***星 刚刚中奖 10元返利2</li>
+            <li>小***星 刚刚中奖 10元返利3</li>
+            <li>小***星 刚刚中奖 10元返利4</li>
+            <li>小***星 刚刚中奖 10元返利5</li>
+            <li>小***星 刚刚中奖 10元返利6</li>
+            <li>小***星 刚刚中奖 10元返利7</li>
+            <li>小***星 刚刚中奖 10元返利8</li>
+            <li>小***星 刚刚中奖 10元返利9</li>
+            <li>小***星 刚刚中奖 10元返利10</li>
+            <li>小***星 刚刚中奖 10元返利11</li>
+            <li>小***星 刚刚中奖 10元返利12</li>
+            <li>小***星 刚刚中奖 10元返利13</li>
+            <li>小***星 刚刚中奖 10元返利14</li>
+            <li>小***星 刚刚中奖 10元返利15</li>
+            <li>小***星 刚刚中奖 10元返利16</li>
+            <li>小***星 刚刚中奖 10元返利17</li>
+            <li>小***星 刚刚中奖 10元返利18</li>
+            <li>小***星 刚刚中奖 10元返利19</li>
+            <li>小***星 刚刚中奖 10元返利20</li>
+            <li>小***星 刚刚中奖 10元返利21</li>
+        </ul>
+    </div>
+
+    <script>
+        $("#J_flip").on("click", "li", function () {
+            var $this = $(this);
+            $this.addClass("animated flipInY red");
+            $this.html("<img src='http://www.gbtags.com/gb/laitu/320x320&text=123/DF278C/ff6600' width='100%' height='100%'/>");
+        });
+
+
+        var $rewardsList = $("#J_rewards_list");
+        var $rewardsUl = $("ul", $rewardsList);
+        var $item = $("li", $rewardsUl);
+        var perH = $item.eq(0).outerHeight(true); 
+        var itemLength = $item.length;
+        var h =  perH * itemLength;
+
+        if (itemLength > 2) {
+            $rewardsUl.append($("li:lt(3)", $rewardsUl).clone());
+        }
+
+        var keyframesBuilder = new StringBuilder();
+
+        keyframesBuilder.append("@-webkit-keyframes scrollText3 {0% {-webkit-transform: translateY(0px);}100%{ -webkit-transform: translateY(-{0}px);}}".format(h))
+ 
+        $("<style>{0}</style>".format(keyframesBuilder.toString())).appendTo("body");
+        $rewardsUl.css("-webkit-animation-name", "scrollText3")
+                  .css("-webkit-animation-duration", "{0}s".format((itemLength / 10).toFixed(2) * 8));
+
+    </script>
+
+</body>
+</html>

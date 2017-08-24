@@ -1,0 +1,157 @@
+/*pop common*/
+.popover-awards{width:530px;position:absolute; top:100px; left:30%;}
+.popover-awards .btn-pill,.popover-awards .btn-waiting {width:200px;height:48px;padding:0;line-height:48px;-webkit-border-radius:30px; -moz-border-radius:30px; border-radius:30px;margin:30px auto 40px;font-size:16px;}
+.popover-awards .btn-waiting{margin:0 auto;}
+
+/*awards-first*/
+.awards-first{text-align:center;}
+.awards-first-text{margin:30px 0; font:bold 14px/22px 'Simsun'; color:#666;}
+.awards-first-bd {width:196px;height:197px;line-height:20px;margin:0 auto;background:url(/misc/images/newuser/awards-v2.png) no-repeat;color:#fff;text-align:center;font-size:18px;text-shadow:1px 0 5px rgba(87, 0, 2, .7);}
+.awards-first-bd .bold {font-size:20px;display:block;padding:10px 0;}
+
+/*awards-second*/
+.awards-sum{width:220px; height:158px; padding:0 70px; margin:45px auto 25px; font-size:18px;color:#FFF; background:url(/misc/images/newuser/awards-v2.png) 70px -213px no-repeat;text-align:center;}
+.awards-sum span{font-size:80px;line-height:90px;}
+.awards-second-text{margin-bottom:15px; text-align:center; font:bold 16px/22px 'Simsun'; }
+.form_list{padding:5px 0 15px 50px;}
+.form_list .mf { display: inline-block; border: 1px solid #d4d4d4; padding: 5px 10px; _padding-bottom: 3px; color: #000; outline: none; -webkit-border-radius: 2px; border-radius: 2px; box-shadow: 1px 1px 2px #bfbfbf; background-color: #fff; font-size: 20px; font-family: "Microsoft YaHei"; font-weight: bold; color: #333; }
+.form_row { margin-top: 10px; color: #333; line-height: 28px; clear:both;overflow:hidden;}
+.form_overflow{ overflow:visible;}
+.form_height_auto_row { height: auto; }
+.form_text_row { margin-top: 0; }
+.form_row select { float: left; height: 28px; padding: 5px; margin-right: 5px; border: 1px solid #d7d7d7; }
+.awards-second .form_left { float: left; width: 100px; height: 32px; font-size: 14px; text-align: right; line-height: 32px; }
+.awards-second .form_left select { float: none; }
+.awards-second .form_right { float: left; width:370px; }
+.awards-second .form_right .tips {line-height:18px;color:#666;}
+.awards-second #passcode {width:70px;}
+.intext { float: left; width: 200px; height: 18px; padding:6px 5px; border: 1px solid #d7d7d7; font-size:14px;}
+.form_row .limited_text{ float: left; margin-bottom: 5px; padding: 5px 10px 5px 25px; background: url("/passport/images/comm/vsprite.png") no-repeat 5px -23px scroll;color: #ff6501; line-height: 20px;  text-align: left; }
+.awards-third{height:32px; padding-left:50px; margin:70px 180px 80px; font:bold 14px/32px 'Simsun'; background:url(/common/images/loading/circle-32.gif) left center no-repeat;}
+.popover-awards .awards-second .btn-pill {margin:10px auto 20px;}
+
+/*awards success*/
+.awards-fourth {padding-bottom:20px;}
+.awards-fourth-text{margin:0 20px 15px 120px; line-height:18px;font-size:12px; color:#666;}
+.awards-fourth-ft {margin:0 20px 15px 120px;font-size:14px; color:#666;}
+.awards-fourth-btn{margin:0 0 45px 155px;}
+.awards-fourth-btn .btn-orange{margin-right:15px;}
+.success-notice{height:37px; padding-left:50px; margin:40px 0 0 70px; font:14px/36px 'Simsun'; background:url(/common/images/icon/ico-success.png) left center no-repeat;}
+
+/*award-pop-b*/
+.award-pop-b {padding:40px 0;}
+.award-pop-b .gift-btn{display:inline-block;width:200px;background:#87B933;border-top:2px solid #739D2B;line-height:44px;font-size:22px;border-radius:0;color:#fff;text-align:center;}
+
+/* awards-first-b   (下面的award-pop-9534也有用到这块样式) */
+.awards-first-b{text-align:center;}
+.awards-first-b-text{margin:10px 0 30px; font:normal 14px/22px 'Simsun'; color:#333;}
+.awards-first-b-bd {width:196px;height:197px;line-height:20px;margin:0 auto;background:url(/misc/images/newuser/awards-v2.png) no-repeat;color:#fff;text-align:center;font-size:18px;text-shadow:1px 0 5px rgba(87, 0, 2, .7);}
+.awards-first-b-bd .bold {font-size:20px;display:block;padding:10px 0;}
+.awards-first-b .form_list{padding:5px 0 15px 50px;}
+.awards-first-b .form_list .mf { display: inline-block; border: 1px solid #d4d4d4; padding: 5px 10px; _padding-bottom: 3px; color: #000; outline: none; -webkit-border-radius: 2px; border-radius: 2px; box-shadow: 1px 1px 2px #bfbfbf; background-color: #fff; font-size: 20px; font-family: "Microsoft YaHei"; font-weight: bold; color: #333; }
+.awards-first-b .form_row { margin-top: 15px; color: #666; line-height: 28px; clear:both;overflow:hidden;}
+.awards-first-b .form_left { float: left; padding-right:20px;width: 110px; height: 32px; font-size: 14px; text-align: right; line-height: 32px; }
+.awards-first-b .form_left select { float: none; }
+.awards-first-b .form_right { float: left;position:relative; width:410px;min-height:50px;_height:50px;text-align:left; }
+.awards-first-b .form_right .alipay-input-tip{clear:both;}
+.awards-first-b .form_right .tips {line-height:24px;color:#999;}
+.awards-first-b .form_right .intext-short {width:70px;}
+.awards-first-b .form_right .vtop {vertical-align:middle;}
+.awards-first-b .form_right .vtopr {display:inline-block;height:28px;line-height:14px;font-size:12px;vertical-align:middle;}
+.awards-first-b .gift-hb {display:inline-block;vertical-align:top;width:116px;height:111px;padding-top:5px;background:url(/misc/images/newuser/awards-v2-b.png) 0 0 no-repeat;font-size:18px;line-height:20px;color:#fff;text-align:center;}
+.awards-first-b .gift-jfb {display:inline-block;vertical-align:top;width:116px;height:116px;padding-left:45px;background:url(/misc/images/newuser/awards-v2-b.png) -117px 0 no-repeat;font-size:0;line-height:0;text-align:center;}
+.awards-second-b{text-align:center;}
+.awards-second-b-text{width:400px;padding-left:50px;min-height:50px;_height:50px;margin:10px auto 15px; text-align:left; font:normal 14px/24px 'Simsun';background: url(/common/images/icon/ico-success.png) 0 5px no-repeat; }
+.awards-second-b .awards-info{margin-top:10px;color:#666;font-size:12px;line-height:22px;color:#999;}
+.awards-second-b .awards-info strong{display:block;margin-top:30px;color:#333;font-size:14px;}
+.awards-second-b .awards-info strong a{font-size:14px;}
+.awards-second-b .awards-info .bold{font-weight:bold;}
+.awards-second-b a{font-size:12px;}
+.awards-fourth-b{text-align:center;}
+.awards-fourth-b-text{width:400px;padding-left:50px;min-height:50px;_height:50px;margin:20px auto 15px; text-align:left; font:normal 14px/24px 'Simsun';background: url(/common/images/icon/ico-success.png) 0 5px no-repeat; }
+.awards-fourth-b .gift-btn{margin-top:20px;}
+.awards-fourth-b a{font-size:12px;}
+
+/*valid tips*/
+.popover-awards .vc{float:left;display:block; width:300px;height:26px; margin-left: 5px; padding:0 10px 0 25px;  vertical-align: bottom; line-height: 26px;}
+.popover-awards .vt{background: url("/passport/images/comm/vsprite.png") no-repeat 5px 7px scroll;}
+.popover-awards .vf{background: url("/passport/images/comm/vsprite.png") no-repeat 5px -25px scroll;color: #ff6501;}
+.popover-awards .vo{background: url("/passport/images/comm/vsprite.png") no-repeat 5px -53px scroll;}
+.popover-awards .von{border-color:#d7d7d7;color:#949494; background: transparent url("/passport/images/comm/vsprite.png") no-repeat 5px -53px scroll;}
+.popover-awards .vfb{border-color: #ffcb99;}
+
+/* award-pop-9534 */
+body .popover-awards-9534{width:798px;border-color:#8b3;}
+body .popover-awards-9534 .pop-header-9534{background-color:#8b3;}
+body .popover-awards-9534 .pop-header-9534 .close{background-color:#9c3;}
+body .popover-awards-9534 .pop-header-9534 .close:hover{background-color:#acde47;}
+body .popover-awards-9534 .pop-content-9534{}
+.popover-awards-9534 .pop-9534-step1{padding:145px 0 0 412px;min-height:277px;_height:277px;background:#8b3 url(/misc/images/newuser/award-pop-9534.png) no-repeat;}
+.popover-awards-9534 .form_list{padding:0;}
+.popover-awards-9534 .form_left{color:#666;font-size:16px;line-height:40px; float: left; padding-right:10px;width: 107px; height: 40px; text-align: right; }
+.popover-awards-9534 .form_right { float: left;position:relative; width:267px;min-height:40px;_height:40px;text-align:left; }
+.popover-awards-9534 .form_right .intext {width:204px;height:26px;line-height:26px;border:1px solid #dbbf93;background:#fff;}
+.popover-awards-9534 .form_right .intext::-webkit-input-placeholder{line-height:26px;}
+.popover-awards-9534 .form_right .intext-short {width:76px;}
+.popover-awards-9534 .form_right .vtop {display:inline-block;width:70px;height:30px;margin-left:5px;vertical-align:middle;}
+.popover-awards-9534 .form_right .vtopr {display:inline-block;margin-left:5px;height:28px;line-height:14px;font-size:12px;vertical-align:middle;}
+.popover-awards-9534 .form_right .gift-btn{display:inline-block;width:215px;background:#53c13b;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;border-radius:3px;line-height:42px;height:46px;font-size:18px;color:#fff;font-weight:bold;text-align:center;}
+.popover-awards-9534 .form_right .gift-btn:hover{background-color:#8b3;}
+.popover-awards-9534 .form_right .form-tip{margin-top:5px;color:#a2904b;font-size:14px;}
+.popover-awards-9534 .form_right .tips{display:block;width:220px;color:#a2904b;float:left;line-height:20px;}
+.popover-awards-9534 .vc{width:230px;margin-left:0;}
+.popover-awards-9534 .pop-9534-step2{padding:50px 0;}
+.popover-awards-9534 .awards-second-b-text{width:370px;}
+
+/*story 8652*/
+.pop-content-8652 { padding: 31px 25px; }
+.pc-8652-name { font-weight:bold; font-size: 16px; }
+.pc-8652-tips { font-size:14px;}
+.pc-8652-r1 { margin-top:10px; text-align: center; color: #999; }
+.pc-8652-er { display: block; margin: 10px auto 20px; }
+.pc-8652-r2 { color:#666; font-size: 14px; }
+
+/* popover-mvpapp9184*/
+/* add body to important popover-mvpapp9184 */
+/* 此处样式已改为10046的样式*/
+body .popover-mvpapp9184{border:0;width:788px;height:651px;background:transparent;}
+body .popover-mvpapp9184 .pop-content-8652{position:relative;width:788px;height:651px;}
+body .popover-mvpapp9184 .app-qrcode{position:absolute;width:157px;height:157px;top:317px;left:340px;}
+body .popover-mvpapp9184 .newmvp8652-img {display:block;width:788px;height:651px;}
+body .popover-mvpapp9184 .close {display:none;_display:block;position:absolute;top:610px;left:625px;width:72px;height:72px;background: url(/common/images/loading/spacer.png) repeat;}
+.newmvp8652-5tip{position:absolute;top:620px;left:194px;width:450px;line-height:26px;font-size:18px;color:#000;text-align:center;}
+
+/* status8 */
+body .popover-nb10605{border:0;width:788px;height:651px;background:transparent;}
+body .popover-nb10605 .vc{margin-left:0;}
+.pop10605form{width:770px;margin:0 auto;text-align:center;}
+.pop10605form-top{width:100%;height:68px;background: url(/misc/images/newuser/nb-10605-v1.alpha.png) 50% 0 no-repeat;text-indent:-9999px;}
+.pop10605form-con1,.pop10605form-con2{ position:relative; padding:26px 70px 0;margin:0 auto;width:542px;background: url(/misc/images/newuser/nb-10605-v1.alpha.png) 0 -312px no-repeat;text-align:center;}
+.pop10605form-con1{height:252px;}
+.pop10605form-con2{height:165px;background-position:0 -68px;}
+.pop10605form-con1 .close,.pop10605form-con2 .close { display:block; position:absolute; top:0; right:66px; width:33px; height:25px; text-indent:-99999px;}
+
+.pop10605form .title{display:block;padding-bottom:12px;font-size:26px;font-weight:bold;color:#333;line-height:42px;}
+.pop10605form .title .jfb100{display:inline-block;margin:0 2px;width:115px;height:42px;background: url(/misc/images/newuser/nb-10605jfb.gif) 0 0 no-repeat;vertical-align:top;}
+.pop10605form .title em{color:#f00;font-size:25px;}
+.pop10605form .row {padding:8px 0 0;}
+.pop10605form .row .l{float:left;text-align:right;width:154px;font-size:16px;color:#333;line-height:35px;font-weight:bold;}
+.pop10605form .row .r{float:left;position:relative;text-align:left;width:380px;}
+.pop10605form .row .r .vc{position:absolute;float:none;top:5px;left:224px;}
+.pop10605form .row .r .limited_text{position:absolute;float:none;top:5px;left:146px;background: url(/passport/images/comm/vsprite.png) no-repeat 5px -25px;color: #ff6501;display: block;padding: 0 10px 0 25px;width: 300px;height: 26px;line-height: 26px;vertical-align: bottom;}
+.pop10605form .vtop {vertical-align:middle;}
+.pop10605form .vtop img{width:70px;height:30px;}
+.pop10605form .vtopr {display:inline-block;height:28px;line-height:14px;font-size:12px;vertical-align:middle;}
+.pop10605-int{padding:8px 3px;width:210px;height:17px;line-height:17px;border:1px solid #459b00;vertical-align:middle;}
+.pop10605-int-short{width:104px;}
+.pop10605-btn{padding:0;width:113px;height:37px;line-height:37px;background:#459b00;color:#fff;vertical-align:middle;border:0;outline:0;font-size:18px;text-align:center;}
+.pop10605form  .btn-pill, .pop10605form  .btn-waiting, .pop10605form  .btn-waiting:hover, .pop10605form  .btn-waiting:active{padding:0;width:113px;height:37px;line-height:37px;color:#fff;vertical-align:middle;border:0;outline:0;font-size:18px;border-radius:0;box-shadow:none;background:#bcbcbc;text-align:center;white-space:nowrap;border-bottom-color:0;}
+
+.resultcon .resultcon{margin-top:3px;}
+.resultcon .result-ok{display:inline-block;width:auto;padding:1px 12px 2px;border:1px solid #d4f4e2;background:#e6fdf0;color:#333;line-height:30px;font-size:18px;color:#333;}
+.resultcon .i-ok{display:inline-block;margin-right:8px;width:30px;height:30px;background:url(/misc/images/newuser/nb-10605-v1.alpha.png) -8px -264px no-repeat;vertical-align:middle;}
+
+.pop10605app{position:relative;border:0;width:551px;height:343px;margin:-35px auto 0;}
+.pop10605app .app-qrcode{position:absolute;width:157px;height:157px;top:69px;left:197px;z-index:1;}
+.pop10605app .img {position:absolute;top:0;left:0;display:block;width:551px;height:343px;z-index:0;}
+.pop10605app .close {display:none;_display:block;position:absolute;top:610px;left:625px;width:72px;height:72px;background: url(/common/images/loading/spacer.png) repeat;}

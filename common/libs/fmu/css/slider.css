@@ -1,0 +1,8 @@
+.fmu-slider { position:relative;}
+.fmu-slider-box {position:relative; width: 100%; margin: 0 auto; overflow: hidden; }
+.fmu-slider-container { position:relative; display:-webkit-box; }
+.fmu-slider-item {position:relative; width:100%; background-color:#fff; }
+
+.fmu-slider-dots-box {position:absolute; width:100%; bottom: 0; left:0; display:inline-block; text-align:center; }
+.fmu-dot {display: inline-block; width: 10px; height: 10px; margin: 5px; border-radius: 5px; background: rgba(255, 255, 255, .2); background-clip:padding-box; }
+.fmu-dot-on { background: #fff; }

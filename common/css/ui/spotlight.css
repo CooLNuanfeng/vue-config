@@ -1,0 +1,59 @@
+/*轮播
+	*****html*****
+	<div class="l switchable-wrapper">
+		<div id="switchable" class="switchable">
+			<ul class="switchable-list clearfix">
+				<li class="switchable-item">
+					<a href=""><img src="..."/></a>
+					<p class="switchable-shadow"></p>
+					<p class="switchable-title"><a href="">...</a></p>
+				</li>
+				...
+			</ul>
+			<a href="javascript:void(0);" id="switchablePrev" class="switchable-btn switchable-prev"><s></s></a>
+			<a href="javascript:void(0);" id="switchableNext" class="switchable-btn switchable-next"><s></s></a>
+		</div>
+	</div>
+*/
+	
+.switchable-wrapper{position:relative;}
+.switchable{width:680px; height:210px; overflow:hidden;}
+.switchable-item{position:relative; float:left; width:680px; height:210px;}
+.switchable-shadow{position:absolute; left:0; bottom:0; width:100%; height:30px; background-color:#000; opacity:.5; filter:alpha(opacity=50); z-index:5;}
+.switchable-title{position:absolute; left:0; bottom:0; height:30px; padding-left:15px; margin-top:-30px; line-height:30px; z-index:10;}
+.switchable-title a{color:#fff;}
+.switchable-triggers{position:absolute; right:10px; bottom:0; height:20px; z-index:10;}
+.switchable-triggers li{float:left; width:11px; height:11px; margin-right:10px; background:#000; overflow:hidden;}
+.switchable-triggers li.current{background:#E10030;}
+.switchable-btn{position:absolute; top:50%; width:25px; height:35px; margin-top:-25px; padding-top:15px; border-radius:2px; background-color:#000; text-align:center; opacity:.5; filter:alpha(opacity=50); z-index:10;}
+.switchable-prev{left:10px;}
+.switchable-next{right:10px;}
+.switchable-btn s{display:inline-block; width:12px; height:24px; background-image:url(../../../common/images/switchable/switchable_arrow.png);}
+.switchable-next s{background-position:-28px 0;}
+.switchable-disabled{opacity:.3; filter:alpha(opacity=30);}
+.switchable-disabled s{opacity:.4; filter:alpha(opacity=40);}
+	
+/*	*****js******
+	<script type="text/javascript" src="../common/libs/tools/expose.min.js"></script>
+	<script type="text/javascript" src="../common/plugins/switchable/jquery.switchable-min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#switchable').switchable({
+			triggers: "&nbsp;",
+			putTriggers: "insertAfter",
+			panels: 'li',
+			easing: 'ease-in-out',
+			effect: 'scrollLeft',
+			loop: true,
+			autoplay: true,
+			prev: '#switchablePrev',
+			next: $('#switchableNext'),
+			onSwitch: function(event, currentIndex) {
+			  var api = this;
+			  api.prevBtn.toggleClass('switchable-disabled', currentIndex === 0);
+			  api.nextBtn.toggleClass('switchable-disabled', currentIndex === api.length - 1);
+			}
+		});	
+	});
+	</script>
+*/

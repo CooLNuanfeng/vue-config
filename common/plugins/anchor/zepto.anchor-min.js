@@ -1,0 +1,1 @@
+(function(b){var c=b(window);d();function a(e){var f=new RegExp("(^|&)"+e+"=([^&]*)(&|$)","i");var g=window.location.search.substr(1).match(f);if(g!=null){return unescape(g[2])}else{return null}}function d(){var f=window.location.href;var g=f.indexOf("anchor=")>-1;var e=a("anchor");if(g&&b(e).length>0){c.on("load",function(){window.scrollTo(0,b(e).offset().top)})}}})(Zepto);

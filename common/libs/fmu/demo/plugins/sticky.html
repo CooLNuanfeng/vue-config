@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sticky</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<link rel="stylesheet" href="/webapp/css/base.css" />
+<script id="J_script_attrsniffer" data-remwidth="750" data-remswitch="1" src="//static2.51fanli.net/static/?f=webapp/js/common/attrsniffer.js"></script>
+<script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+<script src="/common/libs/fmu/js/plugins/sticky.js"></script>
+
+</head>
+
+<body>
+
+    <style>
+        .sticky-wrap{width:100%; height:0.8rem; background:#FFD800;}
+        .text-wrap{padding:0.2rem; background:#00C7C1; color:#FFF;}
+    </style>
+
+    <div class="top-wrap"><img style="min-height:6rem" class="w100" src="//static2.51fanli.net/common/images/loading/spacer.png" /></div>
+
+    <div class="text-wrap">在chrome模拟器中，"position": "-webkit-sticky" 不生效，请切换成非iPhone模式查看效果。</div>
+
+    <div class="text-wrap">如遇sticky元素上方有图片占位时，请尽量固定图片的高度，因：<span class="three">页面加载中，图片未加载完时</span>，会影响sticky元素offset top 的获取。</div>
+
+    <div class="text-wrap">由于positon:-webkit-sticky;的限制，目前插件仅支持屏幕滑动到绑定事件的元素位置时进行吸顶、</div>
+
+    <div id="J_sticky_wrap" class="sticky-wrap">sticky</div>
+
+    <div style="height:40rem;">dddd</div>
+
+    <script>
+        (function () {
+            $("#J_sticky_wrap").sticky({
+                top: 0, //元素粘顶时距离视窗顶部距离，默认为0
+                zIndex: 9 //元素粘顶时的z-index，默认为9
+            });
+        })();
+
+    </script>
+</body>
+</html>

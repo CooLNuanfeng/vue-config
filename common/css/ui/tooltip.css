@@ -1,0 +1,37 @@
+/* tooltip */
+/*
+HTML structure:
+<span class="tooltip-trigger"></span>
+<div class="tooltip tooltip-br">
+	<h4 class="tooltip-title"></h4>
+	<div class="tooltip-content"></div>
+	<div class="tip-arrow tip-tr"></div>
+	<a href="javascript:void(0);" class="close">关闭</a>
+</div>
+
+Require:
+//common/libs/tools/tooltip.min.js
+
+Domready JS Code:
+$('.tooltip-trigger').tooltip({
+	position: 'bottom right'
+});
+*/
+.tooltip-trigger{width:14px; height:15px; margin-left:2px; display:inline-block; *display:inline; *zoom:1; background:url(/common/images/icon/ico-question.png) no-repeat; vertical-align:middle; cursor:pointer; text-indent:-9000px; overflow:hidden;}
+.tooltip-trigger-alert{width:16px; height:16px; margin-left:2px; display:inline-block; *display:inline; *zoom:1; background:url(/common/images/icon/ico-notice-green.png) no-repeat; vertical-align:middle; cursor:pointer; text-indent:-9000px; overflow:hidden;}
+.tooltip{width:380px; padding:15px; border:1px solid #FFCC97; background-color:#FFC; line-height:20px; text-align:left; color:#333; display:none; position:absolute; z-index:2;}
+.tooltip .close{width:7px; height:7px; background:url(/common/images/tooltip/tips.png) no-repeat -28px 0; position:absolute; top:8px; right:5px; text-indent:-9000px; overflow:hidden; cursor:pointer;}
+.tooltip-simple{padding:3px 8px; color:#666; display:block;}
+.tooltip-title{margin-bottom:10px; font-weight:bold; color:#333;}
+.tip-arrow{width:13px; height:7px; display:block; background-image:url(/common/images/tooltip/tips.png); background-repeat:no-repeat; position:absolute; overflow:hidden; z-index:3; font-size:0;}
+
+.tooltip-br{margin-left:-35px; margin-top:10px;}
+.tooltip-br .tip-arrow{top:-7px; left:20px; background-position:-15px 0;}
+.tooltip-bl{margin-left:45px; margin-top:10px;}
+.tooltip-bl .tip-arrow{top:-7px; right:30px; background-position:-15px 0;}
+.tooltip-tr{margin-left:-35px; margin-bottom:10px;}
+.tooltip-tr .tip-arrow{bottom:-7px; left:20px; background-position:-15px -6px;}
+.tooltip-tl{margin-left:45px; margin-bottom:10px;}
+.tooltip-tl .tip-arrow{bottom:-7px; right:30px; background-position:-15px -6px;}
+.tooltip-lt .tip-arrow{width:7px; height:13px; left:-7px; top:5px; background-position:-15px 0;}
+.tooltip-rt .tip-arrow{width:7px; height:13px; right:-7px; top:5px; background-position:-21px 0;}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Spy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="/webapp/css/base.css" />
+
+    <style>
+        .description { margin: 20px 0; }
+        .description p { font-size: 24px; text-align: center; color: #000; }
+        .color { height: 400px; }
+    </style>
+
+    <script src="/common/libs/fmu/js/vendors/jquery/jquery.js"></script>
+    <script src="/common/libs/fmu/js/plugins/scrollspy.js"></script>
+
+</head>
+<body>
+    <section class="description">
+        <p>Scroll Spy</p>
+    </section>
+
+    <div>
+        <h2>Scroll down and see the color change !</h2>
+        <div id="white" class="color J_color">
+            <h2>The White Team</h2>
+        </div>
+        <div id="red" class="color J_color">
+            <h2>The Red Team</h2>
+        </div>
+        <div id="blue" class="color J_color">
+            <h2>The Blue Team</h2>
+        </div>
+        <div id="green" class="color J_color">
+            <h2>The Green Team</h2>
+        </div>
+        <div id="black" class="color J_color">
+            <h2>The Black Team</h2>
+        </div>
+    </div>
+
+    <script>
+        $('.J_color').each(function (i) {
+            var position = $(this).position();
+            $(this).scrollspy({
+                min: position.top,
+                max: position.top + $(this).height(),
+                onEnter: function (element, position) {
+                    console.log('entering ' + element.id);
+                    $("body").css('background-color', element.id);
+                },
+                onLeave: function (element, position) {
+                    console.log('leaving ' + element.id);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
