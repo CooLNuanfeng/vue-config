@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "_common.scss";
+
+$size: 30px;
+div{
+    font-size: $size;
+    font-weight: bold;
+    transform: translateY(50px);
+}
+.flex{
+    flex-direction: column;
+    display: flex;
+}
