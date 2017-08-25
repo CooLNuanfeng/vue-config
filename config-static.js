@@ -1,7 +1,7 @@
 const config = {
-    name : 'es6',
-    entrystyle : './mobile/source/es6.scss',
-    entryjs : './mobile/source/es6.js',
+    name : 'demo',
+    entrystyle : './mobile/source/demo.scss',
+    entryjs : './mobile/source/demo.js',
     output : {
         css : './mobile/css/',
         js : './mobile/js/',

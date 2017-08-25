@@ -2,7 +2,6 @@
 // var  Hello = require('../../vueCompont/hello.vue');
 import Hello from '../../vueCompont/hello.vue';
 
-alert('d')
 const data  = (()=>{
     return {
         msg : 'This is vue'
