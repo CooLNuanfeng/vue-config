@@ -8,7 +8,7 @@ example: C:\Users\hongsong.wu\AppData\Roaming\npm\node_modules
 
 2、配置全局环境变量
 
-	
+
 mac用户：
 
 ###### step one
@@ -27,6 +27,10 @@ mac用户：
 example: export NODE_PATH="C:\Users\hongsong.wu\AppData\Roaming\npm\node_modules"
 
 
+###### step three
+
+退出终端，重新启动
+
 
 window用户：
 
@@ -36,7 +40,7 @@ window用户：
 
 **注意**如果已经有了NODE_PATH环境变量，则选择编辑，末尾追加以;分割
 
-	
+
 
 
 #### 安装全局包依赖
@@ -89,8 +93,8 @@ html
 	<div id="app">
         <div>{{msg}}</div>
     </div>
- 
-传统写法js 
+
+传统写法js
 
 		(function(){
 		    var app = new Vue({
@@ -102,7 +106,7 @@ html
 		})();
 
 es6 写法
-	
+
 
 	import Hello from '../../vueCompont/hello.vue';
 	//or
@@ -137,7 +141,7 @@ es6 写法
 
 第四步骤中 的 Hello 组件可以看做一个简单的组件，大家可以在 公共文件里编写一些常用的组件，以后就可以直接 require 或 import
 
-hello.vue 
+hello.vue
 
 	<template>
     	<h1>Hello {{msg}}!</h1>
@@ -169,14 +173,14 @@ hello.vue
 	}
 	</script>
 
-	
+
 
 
 
 #### 说明
 
 gulpvue.js 和 vuecofig.js 文件还没发到生产，可以先手动在static根目录下创建使用
-	
+
 
 vuecofig.js
 
@@ -253,4 +257,3 @@ gulpvue.js
 	watcher.on('change', function(event) {
 	  console.log('gulp success, running tasks...');
 	});
-
