@@ -4,7 +4,7 @@
 
 	npm root -g
 
-example: C:\Users\xxxxx\AppData\Roaming\npm\node_modules
+example: C:\Users\xxxxxx\AppData\Roaming\npm\node_modules
 
 2、配置全局环境变量
 
