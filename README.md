@@ -48,7 +48,7 @@ window用户：
 
 全局环境配置完毕 运行下面命令 安装 包
 
-	npm install -g gulp browserify vueify babelify mkdirp gulp-sass gulp-autoprefixer gulp-clean gulp-concat-css babel-core babel-loader babel-preset-2015 babel-preset-env babel-preset-stage-2 node-sass
+	npm install -g vue gulp browserify vueify babelify mkdirp gulp-sass gulp-autoprefixer gulp-clean gulp-concat-css babel-core babel-loader babel-preset-2015 babel-preset-env babel-preset-stage-2 node-sass
 
 
 
