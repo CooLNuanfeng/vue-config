@@ -19,6 +19,10 @@ if(process.argv[2] == '-p'){
     process.env.NODE_ENV = 'production';
 }
 
+function swallowError(error) {
+  console.error(error.toString());
+  this.emit('end');
+}
 
 gulp.task('vueify', function () {
   return browserify(config.entryjs)
@@ -28,6 +32,7 @@ gulp.task('vueify', function () {
     out: path.join(config.output.css+'../temp/', 'vue.css')
   })
   .bundle()
+  .on('error',swallowError)
   .pipe(fs.createWriteStream(path.join(config.output.js, config.name+'.bundle.js')))
 });
 
@@ -35,6 +40,7 @@ gulp.task('vueify', function () {
 gulp.task('sass', function () {
   return gulp.src(config.entrystyle)
     .pipe(sass({outputStyle: 'compressed'}))
+    .on('error',swallowError)
     .pipe(gulp.dest(config.output.css+'../temp/'));
 });
 
@@ -42,18 +48,27 @@ gulp.task('concatcss',['sass','vueify'], function () {
   return gulp.src(config.output.css+'../temp/*.css')
     .pipe(concatCss(config.name+'.css'))
     .pipe(autoprefixer())
+    .on('error',swallowError)
     .pipe(gulp.dest(config.output.css));
 });
 
 
 gulp.task('clean', ['concatcss'], function () {
     return gulp.src(config.output.css+'../temp/')
+        .on('error',swallowError)
         .pipe(clean({force: true}));
 });
 
 gulp.task('default', ['vueify','sass','concatcss','clean']);
 gulp.start();
-var watcher = gulp.watch([config.entryjs,config.entrystyle], ['vueify','sass','concatcss','clean']);
+console.log('task ok, it working...');
+var watchTask;
+if(config.components){
+    watchTask = [config.entryjs,config.entrystyle,config.components];
+}else{
+    watchTask = [config.entryjs,config.entrystyle]
+}
+var watcher = gulp.watch(watchTask, ['vueify','sass','concatcss','clean']);
 watcher.on('change', function(event) {
   console.log('gulp success, running tasks...');
 });
