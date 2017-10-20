@@ -15,6 +15,9 @@ const concatCss = require('gulp-concat-css');
 mkdirp.sync(config.output.css);
 mkdirp.sync(config.output.js);
 
+const JSNAME = path.parse(config.entryjs).name;
+const CSSNAME = path.parse(config.entrystyle).name;
+
 if(process.argv[2] == '-p'){
     process.env.NODE_ENV = 'production';
 }
@@ -33,7 +36,7 @@ gulp.task('vueify', function () {
   })
   .bundle()
   .on('error',swallowError)
-  .pipe(fs.createWriteStream(path.join(config.output.js, config.name+'.bundle.js')))
+  .pipe(fs.createWriteStream(path.join(config.output.js, JSNAME+'.bundle.js')))
 });
 
 
@@ -46,7 +49,7 @@ gulp.task('sass', function () {
 
 gulp.task('concatcss',['sass','vueify'], function () {
   return gulp.src(config.output.css+'../temp/*.css')
-    .pipe(concatCss(config.name+'.css'))
+    .pipe(concatCss(CSSNAME+'.css'))
     .pipe(autoprefixer())
     .on('error',swallowError)
     .pipe(gulp.dest(config.output.css));

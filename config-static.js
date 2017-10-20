@@ -1,5 +1,4 @@
 const config = {
-    name : 'demo',
     entrystyle : './mobile/source/demo.scss',
     entryjs : './mobile/source/demo.js',
     components : './components/*.vue',
