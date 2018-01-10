@@ -1,7 +1,7 @@
 <template>
     <h1>Hello {{msg}}!</h1>
 </template>
-<style  lang="scss">
+<style lang="scss">
     $color: #fff;
     h1{
         color: $color;
