@@ -1,5 +1,5 @@
 export default function data(){
     return {
-        msg : 'Hello bb!'
+        msg : 'from data!'
     }
 }

@@ -1,5 +1,8 @@
 <template>
-    <h1>Hello {{msg}}!</h1>
+    <div>
+        <h1>Hello {{msg}}!</h1>
+        <a href="">link</a>
+    </div>
 </template>
 <style lang="scss">
     $color: #fff;
@@ -7,22 +10,18 @@
         color: $color;
     }
     body{
-        background: blue;
+        background: pink;
     }
     p{
         color: $color;
     }
-    div{
-        color: $color;
-        display: flex;
-        justify-content: center;
-    }
+
 </style>
 <script>
 export default{
     data(){
         return{
-            msg : 'Vue'
+            msg : 'Test'
         }
     }
 }

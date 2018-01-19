@@ -4,6 +4,18 @@
 2、安装 brew
 3、安装 nvm
 
+#### 使用说明
+
+Version : gulp 版本
+
+开发:
+
+	gulp dev
+
+生产:
+
+	gulp build
+
 
 
 #### 环境配置
@@ -54,9 +66,9 @@ window用户：
 #### 安装全局包依赖
 
 
-全局环境配置完毕 运行下面命令 安装 包
+全局环境配置完毕 运行下面命令 安装包可能有遗漏，如果运行时提示找不到相应包，自行安装
 
-	npm install -g vue gulp browserify vueify babelify mkdirp gulp-sass gulp-autoprefixer gulp-clean gulp-concat-css babel-core babel-loader babel-preset-2015 babel-preset-env babel-preset-stage-2 node-sass
+	npm install -g vue gulp browserify vueify babelify mkdirp gulp-sass gulp-autoprefixer gulp-clean gulp-concat gulp-clean-css gulp-uglify run-sequence vinyl-source-stream babel-core babel-loader babel-preset-2015 babel-preset-env babel-preset-stage-2 node-sass
 
 
 
@@ -137,131 +149,8 @@ es6 写法
 
 5、运行命令编译
 
-	node gulpvue.js -p
+	gulp dev  //开发调试
 
--p 表示 生产压缩，去除多余注释等
+6、开发结束，打包生产文件
 
-
-
-
-#### 贡献自己的 VUE 组件
-
-
-第四步骤中 的 Hello 组件可以看做一个简单的组件，大家可以在 公共文件里编写一些常用的组件，以后就可以直接 require 或 import
-
-hello.vue
-
-	<template>
-    	<h1>Hello {{msg}}!</h1>
-	</template>
-	<style lang="scss">
-	    $color: #fff;
-	    h1{
-	        color: $color;
-	    }
-	    body{
-	        background: blue;
-	    }
-	    p{
-	        color: $color;
-	    }
-	    div{
-	        color: $color;
-	        display: flex;
-	        justify-content: center;
-	    }
-	</style>
-	<script>
-	export default{
-	    data(){
-	        return{
-	            msg : 'Vue'
-	        }
-	    }
-	}
-	</script>
-
-
-
-
-
-#### 说明
-
-gulpvue.js 和 vuecofig.js 文件还没发到生产，可以先手动在static根目录下创建使用
-
-
-vuecofig.js
-
-	const config = {
-	    name : 'demo',
-	    entrystyle : './mobile/source/demo.scss',
-	    entryjs : './mobile/source/demo.js',
-	    output : {
-	        css : './mobile/css/',
-	        js : './mobile/js/',
-	    }
-	};
-	module.exports = config;
-
-
-gulpvue.js
-
-	var config = require('./config-static');
-	var fs = require("fs");
-	var path = require('path');
-	var browserify = require('browserify');
-	var vueify = require('vueify');
-	var gulp = require('gulp');
-	var babelify = require('babelify');
-	var extractCss = require('vueify/plugins/extract-css');
-	var mkdirp = require('mkdirp');
-	var sass = require('gulp-sass');
-	const autoprefixer = require('gulp-autoprefixer');
-	var clean = require('gulp-clean');
-	const concatCss = require('gulp-concat-css');
-
-	mkdirp.sync(config.output.css);
-	mkdirp.sync(config.output.js);
-
-	if(process.argv[2] == '-p'){
-	    process.env.NODE_ENV = 'production';
-	}
-
-
-	gulp.task('vueify', function () {
-	  return browserify(config.entryjs)
-	  .transform(babelify, { presets: ['es2015','stage-2']})
-	  .transform(vueify)
-	  .plugin(extractCss, {
-	    out: path.join(config.output.css+'../temp/', 'vue.css')
-	  })
-	  .bundle()
-	  .pipe(fs.createWriteStream(path.join(config.output.js, config.name+'.bundle.js')))
-	});
-
-
-	gulp.task('sass', function () {
-	  return gulp.src(config.entrystyle)
-	    .pipe(sass({outputStyle: 'compressed'}))
-	    .pipe(gulp.dest(config.output.css+'../temp/'));
-	});
-
-	gulp.task('concatcss',['sass','vueify'], function () {
-	  return gulp.src(config.output.css+'../temp/*.css')
-	    .pipe(concatCss(config.name+'.css'))
-	    .pipe(autoprefixer())
-	    .pipe(gulp.dest(config.output.css));
-	});
-
-
-	gulp.task('clean', ['concatcss'], function () {
-	    return gulp.src(config.output.css+'../temp/')
-	        .pipe(clean({force: true}));
-	});
-
-	gulp.task('default', ['vueify','sass','concatcss','clean']);
-	gulp.start();
-	var watcher = gulp.watch([config.entryjs,config.entrystyle], ['vueify','sass','concatcss','clean']);
-	watcher.on('change', function(event) {
-	  console.log('gulp success, running tasks...');
-	});
+	gulp build
